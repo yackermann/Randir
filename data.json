@@ -241,6 +241,21 @@
 
 
 	{
+		"country" : "cy",
+		"name" : {
+			"official" 	: "Republic of Cyprus",
+			"common" 	: "Cyprus"
+		},
+		"geo_regions"	:["asia", "middle east", "europe","schengen", "eu"],
+		"map_regions"	:["cyprus"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
 		"country" : "tr",
 		"name" : {
 			"official" 	: "Republic of Turkey",
@@ -276,7 +291,7 @@
 			"official" 	: "Arab Republic of Egypt",
 			"common" 	: "Egypt"
 		},
-		"geo_regions"	:["asia", "middle east", "arab league"],
+		"geo_regions"	:["asia", "middle east", "africa", "african union", "arab league"],
 		"map_regions"	:["egypt"],
 		"visas"			:[
 			{
@@ -382,7 +397,7 @@
 			"common" 	: "Yemen"
 		},
 		"geo_regions"	:["asia", "middle east", "arab league"],
-		"map_regions"	:["yemen"],
+		"map_regions"	:["yemen","soqotra"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -483,8 +498,66 @@
 
 
 
-
-
+	{
+		"country" : "so",
+		"name" : {
+			"official" 	: "Federal Republic of Somalia",
+			"common" 	: "Somalia"
+		},
+		"geo_regions"	:["africa", "african union", "arab league"],
+		"map_regions"	:["somalia","somaliland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "er",
+		"name" : {
+			"official" 	: "State of Eritrea",
+			"common" 	: "Eritrea"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["eritrea"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "dj",
+		"name" : {
+			"official" 	: "Republic of Djibouti",
+			"common" 	: "Djibouti"
+		},
+		"geo_regions"	:["africa", "african union", "arab league"],
+		"map_regions"	:["djibouti"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "et",
+		"name" : {
+			"official" 	: "Federal Democratic Republic of Ethiopia",
+			"common" 	: "Ethiopia"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["ethiopia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
 	{
 		"country" : "sd",
 		"name" : {
@@ -662,6 +735,81 @@
 		},
 		"geo_regions"	:["africa","african union"],
 		"map_regions"	:["chad"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ao",
+		"name" : {
+			"official" 	: "Republic of Angola",
+			"common" 	: "Angola"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["angola"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "tz",
+		"name" : {
+			"official" 	: "United Republic of Tanzania",
+			"common" 	: "Tanzania"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["tanzania"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mu",
+		"name" : {
+			"official" 	: "Republic of Mauritius",
+			"common" 	: "Mauritius"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["mauritius"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mg",
+		"name" : {
+			"official" 	: "Republic of Madagascar",
+			"common" 	: "Madagascar"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["madagascar"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "km",
+		"name" : {
+			"official" 	: "Union of the Comoros",
+			"common" 	: "Comoros"
+		},
+		"geo_regions"	:["africa", "african union", "arab league"],
+		"map_regions"	:["grande comore","mayotte"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
