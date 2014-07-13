@@ -1,0 +1,147 @@
+[	{
+		"country" : "us",
+		"geo_regions"	:["north america"],
+		"name" : {
+			"official" 	: "United States of America",
+			"common" 	: "US"
+		},
+		"map_regions"	:["usa","alaska","hawaii","attu","amchitka","adak","umnak","unalaska","st. lawrence island west","st. lawrence island",
+						"unalaska west","umnak west","another aleutian west","amchitka west","attu west","adak west","path13641","path13643","path13645"],
+		"visas":[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ca",
+		"name" : {
+			"official" 	: "Canada",
+			"common" 	: "Canada"
+		},
+		"geo_regions"	:["north america"],
+		"map_regions"	:["newfoundland","canada","haida gwaii","vancouver","banks","prince patrick","eglinton","mackenzie king",
+						"king christian","ellef ringnes","amund ringnes","axel heiberg","victoria","prince of wales","prescott",
+						"cornwallis","bathurst","devon","baffin","bylot","ellesmere","southhampton"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+	{
+		"country" 		: "ru",
+		"name" : {
+			"official" 	: "Russian Federation",
+			"common" 	: "Russia"
+		},
+		"geo_regions"	:["europe","asia"],
+
+		"map_regions"	:["russia","chukotka","novaya zemlya north","novaya zemlya south","kotelny","komsomolets","october","bolshevik",
+						"kotelny","novaya sibir","lyakhovsky","wrangel","sakhalin","bering island","paramushir","onekotan","medny","iturup","urup","wrangel-w",
+						"prince george","salisbury","wilczek","bell"],
+		"visas":[
+			{
+				"country" : "ru",
+				"type" : [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "kz",
+		"geo_regions"	:["asia"],
+		"name" : {
+			"official" 	: "Republic of Kazakhstan",
+			"common" 	: "Kazakhstan"
+		},
+
+		"map_regions"	:["kazakhstan"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mn",
+		"geo_regions"	:["asia"],
+		"name" : {
+			"official" 	: "Mongolia",
+			"common" 	: "Mongolia"
+		},
+
+		"map_regions"	:["mongolia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+	{
+		"country" : "ua",
+		"name" : {
+			"official" 	: "Ukraine",
+			"common" 	: "Ukraine"
+		},
+		"geo_regions"	:["europe"],
+		"map_regions"	:["ukraine"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "md",
+		"name" : {
+			"official" 	: "Republic of Moldova",
+			"common" 	: "Moldova"
+		},
+		"geo_regions"	:["europe"],
+		"map_regions"	:["moldova"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+	{
+		"country" : "cd",
+		"name" : {
+			"official" 	: "Democratic Republic of the Congo",
+			"common" 	: "DR Congo"
+		},
+		"geo_regions"	:["africa"],
+		"map_regions"	:["drc"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cg",
+		"name" : {
+			"official" 	: "Republic of the Congo",
+			"common" 	: "Congo"
+		},
+		"geo_regions"	:["africa"],
+		"map_regions"	:["congo"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	}
+]
