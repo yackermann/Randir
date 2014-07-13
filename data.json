@@ -83,6 +83,66 @@
 		]
 	},
 	{
+		"country" : "tw",
+		"name" : {
+			"official" 	: "Republic of China",
+			"common" 	: "Taiwan"
+		},
+		"geo_regions"	:["asia", "apec", "asian tigers", "wto"],
+		"map_regions"	:["taiwan"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cn",
+		"name" : {
+			"official" 	: "People's Republic of China",
+			"common" 	: "China"
+		},
+		"geo_regions"	:["asia", "apec", "brics", "wto"],
+		"map_regions"	:["china", "hainan"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "kp",
+		"name" : {
+			"official" 	: "Democratic People's Republic of Korea",
+			"common" 	: "North Korea"
+		},
+		"geo_regions"	:["asia"],
+		"map_regions"	:["north korea"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "kr",
+		"name" : {
+			"official" 	: "Republic of Korea",
+			"common" 	: "South Korea"
+		},
+		"geo_regions"	:["asia", "apec", "asian tigers", "wto"],
+		"map_regions"	:["south korea"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
 		"country" : "jp",
 		"name" : {
 			"official" 	: "Japan",
