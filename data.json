@@ -237,14 +237,261 @@
 			}
 		]
 	},
-	
+
+
+
+	{
+		"country" : "tr",
+		"name" : {
+			"official" 	: "Republic of Turkey",
+			"common" 	: "Turkey"
+		},
+		"geo_regions"	:["asia", "europe", "middle east"],
+		"map_regions"	:["turkey"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "jo",
+		"name" : {
+			"official" 	: "Syrian Arab Republic",
+			"common" 	: "Syria"
+		},
+		"geo_regions"	:["asia", "middle east"],
+		"map_regions"	:["syria"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "eg",
+		"name" : {
+			"official" 	: "Arab Republic of Egypt",
+			"common" 	: "Egypt"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["egypt"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "lb",
+		"name" : {
+			"official" 	: "Lebanese Republic",
+			"common" 	: "Lebanon"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["lebanon"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "il",
+		"name" : {
+			"official" 	: "State of Israel",
+			"common" 	: "Israel"
+		},
+		"geo_regions"	:["asia", "middle east"],
+		"map_regions"	:["israel"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ps",
+		"name" : {
+			"official" 	: "State of Palestine",
+			"common" 	: "Palestine"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["israel"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "iq",
+		"name" : {
+			"official" 	: "Hashemite Kingdom of Jordan",
+			"common" 	: "Jordan"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["jordan"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ir",
+		"name" : {
+			"official" 	: "Islamic Republic of Iran",
+			"common" 	: "Iran"
+		},
+		"geo_regions"	:["asia", "middle east"],
+		"map_regions"	:["iran"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "iq",
+		"name" : {
+			"official" 	: "Republic of Iraq",
+			"common" 	: "Iraq"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["iraq"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ye",
+		"name" : {
+			"official" 	: "Republic of Yemen",
+			"common" 	: "Yemen"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league"],
+		"map_regions"	:["yemen"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "kw",
+		"name" : {
+			"official" 	: "State of Kuwait",
+			"common" 	: "Kuwait"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:["kuwait"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "sa",
+		"name" : {
+			"official" 	: "Kingdom of Saudi Arabia",
+			"common" 	: "Saudi Arabia"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:["saudi"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bh",
+		"name" : {
+			"official" 	: "Kingdom of Bahrain",
+			"common" 	: "Bahrain"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:[],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "qa",
+		"name" : {
+			"official" 	: "State of Qatar",
+			"common" 	: "Qatar"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:["qatar"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ae",
+		"name" : {
+			"official" 	: "United Arab Emirates",
+			"common" 	: "UAE"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:["emirates"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "om",
+		"name" : {
+			"official" 	: "Sultanate of Oman",
+			"common" 	: "Oman"
+		},
+		"geo_regions"	:["asia", "middle east", "arab league", "gulf cooperation council"],
+		"map_regions"	:["oman"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+
+
+
+
 	{
 		"country" : "sd",
 		"name" : {
 			"official" 	: "Republic of the Sudan",
 			"common" 	: "Sudan"
 		},
-		"geo_regions"	:["africa", "arab maghreb union", "african union", "arab league"],
+		"geo_regions"	:["africa", "african union", "arab league"],
 		"map_regions"	:["sudan"],
 		"visas"			:[
 			{
@@ -253,6 +500,8 @@
 			}
 		]
 	},
+
+
 	{
 		"country" : "dz",
 		"name" : {
@@ -283,9 +532,98 @@
 			}
 		]
 	},
+	{
+		"country" : "tn",
+		"name" : {
+			"official" 	: "Tunisian Republic",
+			"common" 	: "Tunisia"
+		},
+		"geo_regions"	:["africa", "african union", "arab maghreb union", "arab league"],
+		"map_regions"	:["tunisia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ma",
+		"name" : {
+			"official" 	: "Kingdom of Morocco",
+			"common" 	: "Morocco"
+		},
+		"geo_regions"	:["africa", "african union", "arab maghreb union", "arab league"],
+		"map_regions"	:["morocco"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mr",
+		"name" : {
+			"official" 	: "Islamic Republic of Mauritania",
+			"common" 	: "Mauritania"
+		},
+		"geo_regions"	:["africa", "african union", "arab maghreb union", "arab league"],
+		"map_regions"	:["mauretania"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
 
 
-
+	{
+		"country" : "ne",
+		"name" : {
+			"official" 	: "Republic of Niger",
+			"common" 	: "Niger"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["niger"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ng",
+		"name" : {
+			"official" 	: "Federal Republic of Nigeria",
+			"common" 	: "Nigeria"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["nigeria"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ml",
+		"name" : {
+			"official" 	: "Republic of Mali",
+			"common" 	: "Mali"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["mali"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
 	{
 		"country" : "cd",
 		"name" : {

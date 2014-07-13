@@ -26,6 +26,11 @@
 		<button onclick="select_region('north america')">North America</button>
 		<button onclick="select_region('schengen')">Schengen</button>
 		<button onclick="select_region('eu')">EU</button>
+		<button onclick="select_region('african union')">African Union</button>
+		<button onclick="select_region('arab league')">Arab league</button>
+		<button onclick="select_region('Middle East')">Middle East</button>
+
+
 		<button onclick="select_region('clear')">RESET</button>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -51,8 +56,8 @@
 			};
 			var select_region = function(region){
 						$.each( json_data, function( key, val ) {
-							if(region != "clear"){
-								if(val.geo_regions.indexOf(region) > -1){
+							if(region.toLowerCase() != "clear"){
+								if(val.geo_regions.indexOf(region.toLowerCase()) > -1){
 									$.each( val.map_regions, function() {
 										colourup(this,"red");
 									});
