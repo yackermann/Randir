@@ -20,23 +20,54 @@
 		<div id="map">
 			<object type="image/svg+xml" data="world.svg" id="svgmap"></object>
 		</div>
+		<button onclick="select_region('africa')">Africa</button>
+		<button onclick="select_region('europe')">Europe</button>
+		<button onclick="select_region('asia')">Asia</button>
+		<button onclick="select_region('north america')">North America</button>
+		<button onclick="select_region('schengen')">Schengen</button>
+		<button onclick="select_region('eu')">EU</button>
+		<button onclick="select_region('clear')">RESET</button>
+
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript">
-			$(window).load(function () { 
-				var svgdom = $(document.getElementById('svgmap').contentDocument);
-				var colourup = function(id) {
-					$("[id='" + id + "']", svgdom).attr("fill", "red");
-				};
+			var json_data 	= '',
+				svgdom 		= '';
+			$(window).load(function () {
+				
+				svgdom = $(document.getElementById('svgmap').contentDocument);
+				
 				$.getJSON( "data.json", function( data ) {
-					var items = [];
+					json_data = data;
 					$.each( data, function( key, val ) {
 						$.each( val.map_regions, function() {
-							colourup(this);
+							colourup(this,"blue");
 						});
 					});
 				});
+				console.log(json_data);
 			});
-			
+			var colourup = function(id,colour) {
+					$("[id='" + id + "']", svgdom).attr("fill", colour);
+			};
+			var select_region = function(region){
+						$.each( json_data, function( key, val ) {
+							if(region != "clear"){
+								if(val.geo_regions.indexOf(region) > -1){
+									$.each( val.map_regions, function() {
+										colourup(this,"red");
+									});
+								}else{
+									$.each( val.map_regions, function() {
+										colourup(this,"black");
+									});
+								}
+							}else{
+								$.each( val.map_regions, function() {
+										colourup(this,"blue");
+								});
+							}
+						});
+			}
 			$( window ).resize(function() {
   				//$( "#svgmap" ).css("width", this.width()).css("height", this.height());
 			});

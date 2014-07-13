@@ -38,7 +38,7 @@
 			"official" 	: "Russian Federation",
 			"common" 	: "Russia"
 		},
-		"geo_regions"	:["europe","asia"],
+		"geo_regions"	:["europe","asia","arctic","ecu","cis"],
 
 		"map_regions"	:["russia","chukotka","novaya zemlya north","novaya zemlya south","kotelny","komsomolets","october","bolshevik",
 						"kotelny","novaya sibir","lyakhovsky","wrangel","sakhalin","bering island","paramushir","onekotan","medny","iturup","urup","wrangel-w",
@@ -52,7 +52,7 @@
 	},
 	{
 		"country" : "kz",
-		"geo_regions"	:["asia"],
+		"geo_regions"	:["asia","ecu","cis"],
 		"name" : {
 			"official" 	: "Republic of Kazakhstan",
 			"common" 	: "Kazakhstan"
@@ -68,7 +68,7 @@
 	},
 	{
 		"country" : "mn",
-		"geo_regions"	:["asia"],
+		"geo_regions"	:["asia","nam"],
 		"name" : {
 			"official" 	: "Mongolia",
 			"common" 	: "Mongolia"
@@ -100,13 +100,120 @@
 	
 
 
+
+	{
+		"country" : "is",
+		"name" : {
+			"official" 	: "Iceland",
+			"common" 	: "Iceland"
+		},
+		"geo_regions"	:["europe","arctic","schengen","nordic council"],
+		"map_regions"	:["iceland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ie",
+		"name" : {
+			"official" 	: "Ireland",
+			"common" 	: "Ireland"
+		},
+		"geo_regions"	:["europe","eu"],
+		"map_regions"	:["ireland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "no",
+		"name" : {
+			"official" 	: "Kingdom of Norway",
+			"common" 	: "Norway"
+		},
+		"geo_regions"	:["europe","arctic","schengen","nordic council"],
+		"map_regions"	:["norway","spitsbergen","nordaustlandet","edgeoya"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "se",
+		"name" : {
+			"official" 	: "Kingdom of Sweden",
+			"common" 	: "Sweden"
+		},
+		"geo_regions"	:["europe","schengen","eu","nordic council"],
+		"map_regions"	:["sweden","gotland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "fi",
+		"name" : {
+			"official" 	: "Republic of Finland",
+			"common" 	: "Finland"
+		},
+		"geo_regions"	:["europe","schengen","eu","nordic council"],
+		"map_regions"	:["finland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "dk",
+		"name" : {
+			"official" 	: "Kingdom of Denmark",
+			"common" 	: "Denmark"
+		},
+		"geo_regions"	:["europe","arctic","schengen","eu","nordic council"],
+		"map_regions"	:["denmark","greenland","greenland","disko","milne","sjælland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "pl",
+		"name" : {
+			"official" 	: "Republic of Poland",
+			"common" 	: "Poland"
+		},
+		"geo_regions"	:["europe","schengen","eu"],
+		"map_regions"	:["poland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
 	{
 		"country" : "ua",
 		"name" : {
 			"official" 	: "Ukraine",
 			"common" 	: "Ukraine"
 		},
-		"geo_regions"	:["europe"],
+		"geo_regions"	:["europe","cis"],
 		"map_regions"	:["ukraine"],
 		"visas"			:[
 			{
@@ -121,7 +228,7 @@
 			"official" 	: "Republic of Moldova",
 			"common" 	: "Moldova"
 		},
-		"geo_regions"	:["europe"],
+		"geo_regions"	:["europe","cis"],
 		"map_regions"	:["moldova"],
 		"visas"			:[
 			{
@@ -130,14 +237,15 @@
 			}
 		]
 	},
+	
 	{
-		"country" : "no",
+		"country" : "sd",
 		"name" : {
-			"official" 	: "Kingdom of Norway",
-			"common" 	: "Norway"
+			"official" 	: "Republic of the Sudan",
+			"common" 	: "Sudan"
 		},
-		"geo_regions"	:["europe","arctic"],
-		"map_regions"	:["norway","spitsbergen","nordaustlandet","edgeoya"],
+		"geo_regions"	:["africa", "arab maghreb union", "african union", "arab league"],
+		"map_regions"	:["sudan"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -146,13 +254,13 @@
 		]
 	},
 	{
-		"country" : "is",
+		"country" : "dz",
 		"name" : {
-			"official" 	: "Iceland",
-			"common" 	: "Iceland"
+			"official" 	: "People's Democratic Republic of Algeria",
+			"common" 	: "Algeria"
 		},
-		"geo_regions"	:["europe","arctic"],
-		"map_regions"	:["iceland"],
+		"geo_regions"	:["africa", "arab maghreb union", "african union", "arab league"],
+		"map_regions"	:["algeria"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -161,13 +269,13 @@
 		]
 	},
 	{
-		"country" : "dk",
+		"country" : "ly",
 		"name" : {
-			"official" 	: "Kingdom of Denmark",
-			"common" 	: "Denmark"
+			"official" 	: "State of Libya",
+			"common" 	: "Libya"
 		},
-		"geo_regions"	:["europe","arctic"],
-		"map_regions"	:["denmark","greenland","greenland","disko","milne"],
+		"geo_regions"	:["africa", "arab maghreb union", "african union", "arab league"],
+		"map_regions"	:["libya"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -175,7 +283,6 @@
 			}
 		]
 	},
-
 
 
 
@@ -185,7 +292,7 @@
 			"official" 	: "Democratic Republic of the Congo",
 			"common" 	: "DR Congo"
 		},
-		"geo_regions"	:["africa"],
+		"geo_regions"	:["africa","african union"],
 		"map_regions"	:["drc"],
 		"visas"			:[
 			{
@@ -200,8 +307,23 @@
 			"official" 	: "Republic of the Congo",
 			"common" 	: "Congo"
 		},
-		"geo_regions"	:["africa"],
+		"geo_regions"	:["africa","african union"],
 		"map_regions"	:["congo"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "td",
+		"name" : {
+			"official" 	: "Republic of Chad",
+			"common" 	: "Chad"
+		},
+		"geo_regions"	:["africa","african union"],
+		"map_regions"	:["chad"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
