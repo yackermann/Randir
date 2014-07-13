@@ -34,12 +34,13 @@
 
 		<button onclick="select_region('clear')">RESET</button>
 
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			var json_data 	= '',
-				svgdom 		= '';
+				svgdom 		= '',
+				places		= [];
 			$(window).load(function () {
-				var places = ["kalimantan", "papua new guinea", "mexico", "estonia", "senegal", "gambia", "casamance", "bissau", "guinee", "sierra leone", "liberia", "ivoire", "burkina", "ghana", "togo", "benin", "cameroon", "centrafrique", "sao tome", "principe", "bioko", "gabon", "equatorial guinea", "cabinda", "rwanda", "burundi", "uganda", "kenya", "zambia", "malawi", "mozambique", "zimbabwe", "namibia", "botswana", "swaziland", "lesotho", "south africa", "east antarctica", "antarctic peninsula", "thurston", "alexander", "smyley", "robert", "king george", "james ross", "elephant", "australia", "tasmania", "new zealand north island", "new zealand south island", "new caledonia", "sumatra", "east malaysia", "brunei", "sulawesi", "maluku", "seram", "java", "bali", "lombok", "sumba", "flores", "timor", "new ireland", "new britain", "bougainville", "choiseul", "new georgia", "santa isabel", "malaita", "santa ana", "rennell", "espiritu santo", "malakula", "efate", "fiji", "palawan", "negros", "cebu", "samar", "path7462", "luzon", "mindoro", "hainan", "taiwan", "reunion", "aldabra", "praslin", "mahe", "male", "maldive", "gan", "flores", "terceira", "pico", "sao miguel", "madeira", "lanzarote", "gran canaria", "tenerife", "santo antao", "boa vista", "santiago", "raiatea", "tahiti", "guadeloupe", "dominica", "martinique", "st. lucia", "st. vincent", "grenada", "trinidad", "puerto rico", "haiti-dominican border", "domincan republic", "haiti", "falklands west", "falklands east", "cuba", "bimini", "andros", "inagua", "eleuthera", "grand bahama", "jamaica", "irian jaya", "galapagos", "guatemala", "honduras", "el salvador", "nicaragua", "costa rica", "panama", "colombia", "venezuela", "guyana", "suriname", "guyane", "ecuador", "peru", "bolivia", "paraguay", "uruguay", "argentina", "tierra del fuego chile", "tierra del fuego argentina", "chile", "chiloe", "brazil", "belize", "china", "north korea", "south korea", "turkmenistan", "uzbekistan", "tajikistan", "kirgizstan", "afghanistan", "pakistan", "india", "nepal", "bhutan", "bangladesh", "burma", "thailand", "malaysia", "cambodia", "laos", "vietnam", "georgia", "armenia", "azerbaijan", "britain", "ulster", "estonia", "hiumaa", "saaremaa", "lithuania", "belarus", "spain", "portugal", "majorca", "sardinia", "corsica", "france", "netherlands", "belgium", "germany", "switzerland", "czech", "slovakia", "austria", "hungary", "slovenia", "croatia", "bosnia", "italy", "sicily", "malta", "romania", "serbia and montenegro", "bulgaria", "albania", "macedonia", "greece", "thrace", "crete"];
+				places = ["kalimantan", "papua new guinea", "mexico", "estonia", "senegal", "gambia", "casamance", "bissau", "guinee", "sierra leone", "liberia", "ivoire", "burkina", "ghana", "togo", "benin", "cameroon", "centrafrique", "sao tome", "principe", "bioko", "gabon", "equatorial guinea", "cabinda", "rwanda", "burundi", "uganda", "kenya", "zambia", "malawi", "mozambique", "zimbabwe", "namibia", "botswana", "swaziland", "lesotho", "south africa", "east antarctica", "antarctic peninsula", "thurston", "alexander", "smyley", "robert", "king george", "james ross", "elephant", "australia", "tasmania", "new zealand north island", "new zealand south island", "new caledonia", "sumatra", "east malaysia", "brunei", "sulawesi", "maluku", "seram", "java", "bali", "lombok", "sumba", "flores", "timor", "new ireland", "new britain", "bougainville", "choiseul", "new georgia", "santa isabel", "malaita", "santa ana", "rennell", "espiritu santo", "malakula", "efate", "fiji", "palawan", "negros", "cebu", "samar", "path7462", "luzon", "mindoro", "hainan", "taiwan", "reunion", "aldabra", "praslin", "mahe", "male", "maldive", "gan", "flores", "terceira", "pico", "sao miguel", "madeira", "lanzarote", "gran canaria", "tenerife", "santo antao", "boa vista", "santiago", "raiatea", "tahiti", "guadeloupe", "dominica", "martinique", "st. lucia", "st. vincent", "grenada", "trinidad", "puerto rico", "haiti-dominican border", "domincan republic", "haiti", "falklands west", "falklands east", "cuba", "bimini", "andros", "inagua", "eleuthera", "grand bahama", "jamaica", "irian jaya", "galapagos", "guatemala", "honduras", "el salvador", "nicaragua", "costa rica", "panama", "colombia", "venezuela", "guyana", "suriname", "guyane", "ecuador", "peru", "bolivia", "paraguay", "uruguay", "argentina", "tierra del fuego chile", "tierra del fuego argentina", "chile", "chiloe", "brazil", "belize", "china", "north korea", "south korea", "turkmenistan", "uzbekistan", "tajikistan", "kirgizstan", "afghanistan", "pakistan", "india", "nepal", "bhutan", "bangladesh", "burma", "thailand", "malaysia", "cambodia", "laos", "vietnam", "georgia", "armenia", "azerbaijan", "britain", "ulster", "estonia", "hiumaa", "saaremaa", "lithuania", "belarus", "spain", "portugal", "majorca", "sardinia", "corsica", "france", "netherlands", "belgium", "germany", "switzerland", "czech", "slovakia", "austria", "hungary", "slovenia", "croatia", "bosnia", "italy", "sicily", "malta", "romania", "serbia and montenegro", "bulgaria", "albania", "macedonia", "greece", "thrace", "crete"];
 				svgdom = $(document.getElementById('svgmap').contentDocument);
 				$.each(places, function() {
 						colourup(this,"white");
@@ -49,11 +50,13 @@
 					json_data = data;
 					$.each( data, function( key, val ) {
 						$.each( val.map_regions, function() {
+							if(places.indexOf(this.toString()) > -1){
+								delete places[places.indexOf(this.toString())];
+							};
 							colourup(this,"green");
 						});
 					});
 				});
-				console.log(json_data);
 			});
 			var colourup = function(id,colour) {
 					$("[id='" + id + "']", svgdom).attr("fill", colour);

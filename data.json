@@ -157,6 +157,36 @@
 			}
 		]
 	},
+	{
+		"country" : "vn",
+		"name" : {
+			"official" 	: "Socialist Republic of Vietnam",
+			"common" 	: "Vietnam"
+		},
+		"geo_regions"	:["asia"],
+		"map_regions"	:["vietnam"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "np",
+		"name" : {
+			"official" 	: "Federal Democratic Republic of Nepal",
+			"common" 	: "Nepal"
+		},
+		"geo_regions"	:["asia"],
+		"map_regions"	:["nepal"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
 	
 
 
