@@ -1,6 +1,6 @@
 [	{
 		"country" : "us",
-		"geo_regions"	:["north america"],
+		"geo_regions"	:["north america","arctic"],
 		"name" : {
 			"official" 	: "United States of America",
 			"common" 	: "US"
@@ -20,7 +20,7 @@
 			"official" 	: "Canada",
 			"common" 	: "Canada"
 		},
-		"geo_regions"	:["north america"],
+		"geo_regions"	:["north america","arctic"],
 		"map_regions"	:["newfoundland","canada","haida gwaii","vancouver","banks","prince patrick","eglinton","mackenzie king",
 						"king christian","ellef ringnes","amund ringnes","axel heiberg","victoria","prince of wales","prescott",
 						"cornwallis","bathurst","devon","baffin","bylot","ellesmere","southhampton"],
@@ -82,6 +82,23 @@
 			}
 		]
 	},
+	{
+		"country" : "jp",
+		"name" : {
+			"official" 	: "Japan",
+			"common" 	: "Japan"
+		},
+		"geo_regions"	:["asia"],
+		"map_regions"	:["kyushu","shikoku","honshu","hokkaido"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	
+
 
 	{
 		"country" : "ua",
@@ -113,6 +130,54 @@
 			}
 		]
 	},
+	{
+		"country" : "no",
+		"name" : {
+			"official" 	: "Kingdom of Norway",
+			"common" 	: "Norway"
+		},
+		"geo_regions"	:["europe","arctic"],
+		"map_regions"	:["norway","spitsbergen","nordaustlandet","edgeoya"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "is",
+		"name" : {
+			"official" 	: "Iceland",
+			"common" 	: "Iceland"
+		},
+		"geo_regions"	:["europe","arctic"],
+		"map_regions"	:["iceland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "dk",
+		"name" : {
+			"official" 	: "Kingdom of Denmark",
+			"common" 	: "Denmark"
+		},
+		"geo_regions"	:["europe","arctic"],
+		"map_regions"	:["denmark","greenland","greenland","disko","milne"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+
+
 
 	{
 		"country" : "cd",
