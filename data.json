@@ -1,37 +1,4 @@
-[	{
-		"country" : "us",
-		"geo_regions"	:["north america","arctic"],
-		"name" : {
-			"official" 	: "United States of America",
-			"common" 	: "US"
-		},
-		"map_regions"	:["usa","alaska","hawaii","attu","amchitka","adak","umnak","unalaska","st. lawrence island west","st. lawrence island",
-						"unalaska west","umnak west","another aleutian west","amchitka west","attu west","adak west","path13641","path13643","path13645"],
-		"visas":[
-			{
-				"country" 	: "ru",
-				"type" 		: [{"length" : "30"}]
-			}
-		]
-	},
-	{
-		"country" : "ca",
-		"name" : {
-			"official" 	: "Canada",
-			"common" 	: "Canada"
-		},
-		"geo_regions"	:["north america","arctic"],
-		"map_regions"	:["newfoundland","canada","haida gwaii","vancouver","banks","prince patrick","eglinton","mackenzie king",
-						"king christian","ellef ringnes","amund ringnes","axel heiberg","victoria","prince of wales","prescott",
-						"cornwallis","bathurst","devon","baffin","bylot","ellesmere","southhampton"],
-		"visas"			:[
-			{
-				"country" 	: "ru",
-				"type" 		: [{"length" : "30"}]
-			}
-		]
-	},
-
+[
 	{
 		"country" 		: "ru",
 		"name" : {
@@ -1347,14 +1314,187 @@
 
 
 
+
+
+	{
+		"country" : "us",
+		"geo_regions"	:["north america","arctic"],
+		"name" : {
+			"official" 	: "United States of America",
+			"common" 	: "US"
+		},
+		"map_regions"	:["usa","alaska","hawaii","attu","amchitka","adak","umnak","unalaska","st. lawrence island west","st. lawrence island",
+						"unalaska west","umnak west","another aleutian west","amchitka west","attu west","adak west","path13641","path13643","path13645"],
+		"visas":[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ca",
+		"name" : {
+			"official" 	: "Canada",
+			"common" 	: "Canada"
+		},
+		"geo_regions"	:["north america","arctic"],
+		"map_regions"	:["newfoundland","canada","haida gwaii","vancouver","banks","prince patrick","eglinton","mackenzie king",
+						"king christian","ellef ringnes","amund ringnes","axel heiberg","victoria","prince of wales","prescott",
+						"cornwallis","bathurst","devon","baffin","bylot","ellesmere","southhampton"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mx",
+		"name" : {
+			"official" 	: "United Mexican States",
+			"common" 	: "Mexico"
+		},
+		"geo_regions"	:["latin america", "north america", "caribean"],
+		"map_regions"	:["mexico"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "hn",
+		"name" : {
+			"official" 	: "Republic of Honduras",
+			"common" 	: "Honduras"
+		},
+		"geo_regions"	:["latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["honduras"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gt",
+		"name" : {
+			"official" 	: "Republic of Guatemala",
+			"common" 	: "Guatemala"
+		},
+		"geo_regions"	:["latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["guatemala"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bz",
+		"name" : {
+			"official" 	: "Belize",
+			"common" 	: "Belize"
+		},
+		"geo_regions"	:["latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["belize"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cr",
+		"name" : {
+			"official" 	: "Republic of Costa Rica",
+			"common" 	: "Costa Rica"
+		},
+		"geo_regions"	:["latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["costa rica"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ni",
+		"name" : {
+			"official" 	: "Republic of Nicaragua",
+			"common" 	: "Nicaragua"
+		},
+		"geo_regions"	:["latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["nicaragua"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "sv",
+		"name" : {
+			"official" 	: "Republic of El Salvador",
+			"common" 	: "El Salvador"
+		},
+		"geo_regions"	:["latin america", "north america", "central america"],
+		"map_regions"	:["el salvador"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "pa",
+		"name" : {
+			"official" 	: "Republic of Panama",
+			"common" 	: "Panama"
+		},
+		"geo_regions"	:["south america", "latin america", "north america", "central america", "caribean"],
+		"map_regions"	:["panama"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+
+
 	{
 		"country" : "ve",
 		"name" : {
 			"official" 	: "Bolivarian Republic of Venezuela",
 			"common" 	: "Venezuela"
 		},
-		"geo_regions"	:["south america", "latin america"],
+		"geo_regions"	:["south america", "latin america", "caribean"],
 		"map_regions"	:["venezuela"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "co",
+		"name" : {
+			"official" 	: "Republic of Colombia",
+			"common" 	: "Colombia"
+		},
+		"geo_regions"	:["south america", "latin america", "caribean"],
+		"map_regions"	:["colombia"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -1385,36 +1525,6 @@
 		},
 		"geo_regions"	:["south america", "latin america"],
 		"map_regions"	:["guyana"],
-		"visas"			:[
-			{
-				"country" 	: "ru",
-				"type" 		: [{"length" : "30"}]
-			}
-		]
-	},
-	{
-		"country" : "co",
-		"name" : {
-			"official" 	: "Republic of Colombia",
-			"common" 	: "Colombia"
-		},
-		"geo_regions"	:["south america", "latin america"],
-		"map_regions"	:["colombia"],
-		"visas"			:[
-			{
-				"country" 	: "ru",
-				"type" 		: [{"length" : "30"}]
-			}
-		]
-	},
-	{
-		"country" : "pa",
-		"name" : {
-			"official" 	: "Republic of Panama",
-			"common" 	: "Panama"
-		},
-		"geo_regions"	:["south america", "latin america"],
-		"map_regions"	:["panama"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
