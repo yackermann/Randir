@@ -5,7 +5,7 @@
 		<style type="text/css">
 			body{
 				margin: 0;
-				background: black;
+				background: white;
 			}
 			#svgmap{
 				width: 100%;
@@ -19,45 +19,50 @@
 	<body>
 
 		<div id="map">
-			<object type="image/svg+xml" data="world.svg" id="svgmap"></object>
+			<button onclick="select_region('africa')">Africa</button>
+			<button onclick="select_region('europe')">Europe</button>
+			<button onclick="select_region('asia')">Asia</button>
+			<button onclick="select_region('north america')">North America</button>
+			<button onclick="select_region('schengen')">Schengen</button>
+			<button onclick="select_region('eu')">EU</button>
+			<button onclick="select_region('african union')">African Union</button>
+			<button onclick="select_region('arab league')">Arab league</button>
+			<button onclick="select_region('Middle East')">Middle East</button>
+			<button onclick="select_region('clear')">RESET</button>
+
+			<object type="image/svg+xml" data="world.svg" id="svgmap" class="panzoom"></object>
 		</div>
-		<button onclick="select_region('africa')">Africa</button>
-		<button onclick="select_region('europe')">Europe</button>
-		<button onclick="select_region('asia')">Asia</button>
-		<button onclick="select_region('north america')">North America</button>
-		<button onclick="select_region('schengen')">Schengen</button>
-		<button onclick="select_region('eu')">EU</button>
-		<button onclick="select_region('african union')">African Union</button>
-		<button onclick="select_region('arab league')">Arab league</button>
-		<button onclick="select_region('Middle East')">Middle East</button>
-
-
-		<button onclick="select_region('clear')">RESET</button>
-
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
 		<script type="text/javascript">
 			var json_data 	= '',
-				svgdom 		= '',
-				places		= [];
+				svgdom 		= '';
 			$(window).load(function () {
-				places = ["kalimantan", "papua new guinea", "mexico", "estonia", "senegal", "gambia", "casamance", "bissau", "guinee", "sierra leone", "liberia", "ivoire", "burkina", "ghana", "togo", "benin", "cameroon", "centrafrique", "sao tome", "principe", "bioko", "gabon", "equatorial guinea", "cabinda", "rwanda", "burundi", "uganda", "kenya", "zambia", "malawi", "mozambique", "zimbabwe", "namibia", "botswana", "swaziland", "lesotho", "south africa", "east antarctica", "antarctic peninsula", "thurston", "alexander", "smyley", "robert", "king george", "james ross", "elephant", "australia", "tasmania", "new zealand north island", "new zealand south island", "new caledonia", "sumatra", "east malaysia", "brunei", "sulawesi", "maluku", "seram", "java", "bali", "lombok", "sumba", "flores", "timor", "new ireland", "new britain", "bougainville", "choiseul", "new georgia", "santa isabel", "malaita", "santa ana", "rennell", "espiritu santo", "malakula", "efate", "fiji", "palawan", "negros", "cebu", "samar", "path7462", "luzon", "mindoro", "hainan", "taiwan", "reunion", "aldabra", "praslin", "mahe", "male", "maldive", "gan", "flores", "terceira", "pico", "sao miguel", "madeira", "lanzarote", "gran canaria", "tenerife", "santo antao", "boa vista", "santiago", "raiatea", "tahiti", "guadeloupe", "dominica", "martinique", "st. lucia", "st. vincent", "grenada", "trinidad", "puerto rico", "haiti-dominican border", "domincan republic", "haiti", "falklands west", "falklands east", "cuba", "bimini", "andros", "inagua", "eleuthera", "grand bahama", "jamaica", "irian jaya", "galapagos", "guatemala", "honduras", "el salvador", "nicaragua", "costa rica", "panama", "colombia", "venezuela", "guyana", "suriname", "guyane", "ecuador", "peru", "bolivia", "paraguay", "uruguay", "argentina", "tierra del fuego chile", "tierra del fuego argentina", "chile", "chiloe", "brazil", "belize", "china", "north korea", "south korea", "turkmenistan", "uzbekistan", "tajikistan", "kirgizstan", "afghanistan", "pakistan", "india", "nepal", "bhutan", "bangladesh", "burma", "thailand", "malaysia", "cambodia", "laos", "vietnam", "georgia", "armenia", "azerbaijan", "britain", "ulster", "estonia", "hiumaa", "saaremaa", "lithuania", "belarus", "spain", "portugal", "majorca", "sardinia", "corsica", "france", "netherlands", "belgium", "germany", "switzerland", "czech", "slovakia", "austria", "hungary", "slovenia", "croatia", "bosnia", "italy", "sicily", "malta", "romania", "serbia and montenegro", "bulgaria", "albania", "macedonia", "greece", "thrace", "crete"];
 				svgdom = $(document.getElementById('svgmap').contentDocument);
-				$.each(places, function() {
-						colourup(this,"white");
-					});
 				
 				$.getJSON( "data.json", function( data ) {
 					json_data = data;
 					$.each( data, function( key, val ) {
-						$.each( val.map_regions, function() {
-							if(places.indexOf(this.toString()) > -1){
-								delete places[places.indexOf(this.toString())];
-							};
-							colourup(this,"green");
-						});
+						colourup(val.country, "#e0e0e0");
 					});
 				});
 			});
+			(function() {
+				var $section = $('#map');
+				var $panzoom = $section.find('.panzoom').panzoom();
+				$panzoom.parent().on('mousewheel.focal', function( e ) {
+					e.preventDefault();
+					var delta = e.delta || e.originalEvent.wheelDelta;
+					var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+					$panzoom.panzoom('zoom', zoomOut, {
+						minScale: 1,
+						increment: 0.2,
+						animate: true,
+						focal: e
+					});
+				});
+				
+			})();
 			var colourup = function(id,colour) {
 					$("[id='" + id + "']", svgdom).attr("fill", colour);
 			};
@@ -65,18 +70,12 @@
 						$.each( json_data, function( key, val ) {
 							if(region.toLowerCase() != "clear"){
 								if(val.geo_regions.indexOf(region.toLowerCase()) > -1){
-									$.each( val.map_regions, function() {
-										colourup(this,"blue");
-									});
+									colourup(val.country,"blue");
 								}else{
-									$.each( val.map_regions, function() {
-										colourup(this,"white");
-									});
+									colourup(val.country,"#e0e0e0");
 								}
 							}else{
-								$.each( val.map_regions, function() {
-										colourup(this,"green");
-								});
+								colourup(val.country,"#e0e0e0");
 							}
 						});
 			}
@@ -85,5 +84,6 @@
 			});
 			
 	</script>
+	<style></style>
 	</body>
 </html>
