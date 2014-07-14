@@ -1347,13 +1347,96 @@
 
 
 
-
-
-
-
-
-
-
+	{
+		"country" : "ve",
+		"name" : {
+			"official" 	: "Bolivarian Republic of Venezuela",
+			"common" 	: "Venezuela"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["venezuela"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "sr",
+		"name" : {
+			"official" 	: "Republic of Suriname",
+			"common" 	: "Suriname"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["suriname"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gy",
+		"name" : {
+			"official" 	: "Co-operative Republic of Guyana",
+			"common" 	: "Guyana"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["guyana"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "co",
+		"name" : {
+			"official" 	: "Republic of Colombia",
+			"common" 	: "Colombia"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["colombia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "pa",
+		"name" : {
+			"official" 	: "Republic of Panama",
+			"common" 	: "Panama"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["panama"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ec",
+		"name" : {
+			"official" 	: "Republic of Ecuador",
+			"common" 	: "Ecuador"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["ecuador"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
 
 	{
 		"country" : "br",
@@ -1361,8 +1444,98 @@
 			"official" 	: "Federative Republic of Brazil",
 			"common" 	: "Brazil"
 		},
-		"geo_regions"	:["south america"],
+		"geo_regions"	:["south america", "latin america"],
 		"map_regions"	:["brazil"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cl",
+		"name" : {
+			"official" 	: "Republic of Chile",
+			"common" 	: "Chile"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["chile","chiloe","tierra del fuego chile"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bo",
+		"name" : {
+			"official" 	: "Plurinational State of Bolivia",
+			"common" 	: "Bolivia"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["bolivia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "pe",
+		"name" : {
+			"official" 	: "Republic of Peru",
+			"common" 	: "Peru"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["peru"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ar",
+		"name" : {
+			"official" 	: "Argentine Republic",
+			"common" 	: "Argentina"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["argentina","tierra del fuego argentina"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "uy",
+		"name" : {
+			"official" 	: "Oriental Republic of Uruguay",
+			"common" 	: "Uruguay"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["uruguay"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "py",
+		"name" : {
+			"official" 	: "Republic of Paraguay",
+			"common" 	: "Paraguay"
+		},
+		"geo_regions"	:["south america", "latin america"],
+		"map_regions"	:["paraguay"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
