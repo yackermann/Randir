@@ -758,6 +758,66 @@
 		]
 	},
 	{
+		"country" : "sn",
+		"name" : {
+			"official" 	: "Republic of Senegal",
+			"common" 	: "Senegal"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["senegal"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gn",
+		"name" : {
+			"official" 	: "Republic of Guinea",
+			"common" 	: "Guinea-Conakry"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["guinee"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gw",
+		"name" : {
+			"official" 	: "Republic of Guinea-Bissau",
+			"common" 	: "Guinea-Bissau"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["bissau"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gm",
+		"name" : {
+			"official" 	: "Republic of the Gambia",
+			"common" 	: "Gambia"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["gambia","casamance"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
 		"country" : "lr",
 		"name" : {
 			"official" 	: "Republic of Liberia",
