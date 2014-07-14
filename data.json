@@ -716,7 +716,7 @@
 			"official" 	: "Kingdom of Morocco",
 			"common" 	: "Morocco"
 		},
-		"geo_regions"	:["africa", "african union", "arab maghreb union", "arab league"],
+		"geo_regions"	:["africa", "arab maghreb union", "arab league"],
 		"map_regions"	:["morocco"],
 		"visas"			:[
 			{
@@ -750,6 +750,186 @@
 		},
 		"geo_regions"	:["africa", "african union"],
 		"map_regions"	:["niger"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "lr",
+		"name" : {
+			"official" 	: "Republic of Liberia",
+			"common" 	: "Liberia"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["liberia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "sl",
+		"name" : {
+			"official" 	: "Republic of Sierra Leone",
+			"common" 	: "Sierra Leone"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["sierra leone"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gh",
+		"name" : {
+			"official" 	: "Republic of Ghana",
+			"common" 	: "Ghana"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["ghana"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ci",
+		"name" : {
+			"official" 	: "Ivory Coast",
+			"common" 	: "Côte d'Ivoire"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["ivoire"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ga",
+		"name" : {
+			"official" 	: "Gabonese Republic",
+			"common" 	: "Gabon"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["gabon"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "gq",
+		"name" : {
+			"official" 	: "Republic of Equatorial Guinea",
+			"common" 	: "Equatorial Guinea"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["equatorial guinea","bioko"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "st",
+		"name" : {
+			"official" 	: "Democratic Republic of São Tomé and Príncipe",
+			"common" 	: "São Tomé and Príncipe"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["principe","sao tome"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bj",
+		"name" : {
+			"official" 	: "Republic of Benin",
+			"common" 	: "Benin"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["benin"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bf",
+		"name" : {
+			"official" 	: "Burkina Faso",
+			"common" 	: "Burkina"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["burkina"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "tg",
+		"name" : {
+			"official" 	: "Togolese Republic",
+			"common" 	: "Togo"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["togo"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cf",
+		"name" : {
+			"official" 	: "Central African Republic",
+			"common" 	: "CAR"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["centrafrique"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "cm",
+		"name" : {
+			"official" 	: "Republic of Cameroon",
+			"common" 	: "Cameroon"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["cameroon"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -839,7 +1019,7 @@
 			"common" 	: "Angola"
 		},
 		"geo_regions"	:["africa", "african union"],
-		"map_regions"	:["angola"],
+		"map_regions"	:["angola","cabinda"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
@@ -900,6 +1080,229 @@
 		},
 		"geo_regions"	:["africa", "african union", "arab league"],
 		"map_regions"	:["grande comore","mayotte"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bi",
+		"name" : {
+			"official" 	: "Republic of Burundi",
+			"common" 	: "Burundi"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["burundi"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "rw",
+		"name" : {
+			"official" 	: "Republic of Rwanda",
+			"common" 	: "Rwanda"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["rwanda"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "na",
+		"name" : {
+			"official" 	: "Republic of Namibia",
+			"common" 	: "Namibia"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["namibia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "bw",
+		"name" : {
+			"official" 	: "Republic of Botswana",
+			"common" 	: "Botswana"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["botswana"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "zw",
+		"name" : {
+			"official" 	: "Republic of Zimbabwe",
+			"common" 	: "Zimbabwe"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["zimbabwe"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "za",
+		"name" : {
+			"official" 	: "Republic of South Africa",
+			"common" 	: "South Africa"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["south africa"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mz",
+		"name" : {
+			"official" 	: "Republic of Mozambique",
+			"common" 	: "Mozambique"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["mozambique"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "sz",
+		"name" : {
+			"official" 	: "Kingdom of Swaziland",
+			"common" 	: "Swaziland"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["swaziland"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ls",
+		"name" : {
+			"official" 	: "Kingdom of Lesotho",
+			"common" 	: "Lesotho"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["lesotho"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "zm",
+		"name" : {
+			"official" 	: "Republic of Zambia",
+			"common" 	: "Zambia"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["zambia"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "mw",
+		"name" : {
+			"official" 	: "Republic of Malawi",
+			"common" 	: "Malawi"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["malawi"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ug",
+		"name" : {
+			"official" 	: "Republic of Uganda",
+			"common" 	: "Uganda"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["uganda"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+	{
+		"country" : "ke",
+		"name" : {
+			"official" 	: "Republic of Kenya",
+			"common" 	: "Kenya"
+		},
+		"geo_regions"	:["africa", "african union"],
+		"map_regions"	:["kenya"],
+		"visas"			:[
+			{
+				"country" 	: "ru",
+				"type" 		: [{"length" : "30"}]
+			}
+		]
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+		"country" : "br",
+		"name" : {
+			"official" 	: "Federative Republic of Brazil",
+			"common" 	: "Brazil"
+		},
+		"geo_regions"	:["south america"],
+		"map_regions"	:["brazil"],
 		"visas"			:[
 			{
 				"country" 	: "ru",
