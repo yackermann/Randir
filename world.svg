@@ -277,7 +277,8 @@
 {
    opacity: 1;
    color: #e0e0e0;
-   fill:#ffffff;
+   /*fill:#ffffff;*/
+   fill:yellow;
    stroke:#ffffff;
    stroke-width:0.5;
    stroke-miterlimit:1;

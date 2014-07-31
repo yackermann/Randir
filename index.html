@@ -39,7 +39,10 @@
 		</section>
 		<script type="text/javascript">
 				var json_data 	= '',
-					svgdom 		= '';
+					svgdom 		= '',
+					rest = ["a", "pr", "ge", "xa", "xo", "fr", "frx", "gp", "mq", "re", "yt", "id", "it", "bd", "do", "nz", "cu", "pt", "de", "th", "pg", "hr", "gl", "mm", "sb", "gb", "ht", "in", "cnx", "hk", "mo", "az", "xn", "my", "ph", "ee", "es", "kh", "lk", "gr", "xp", "tf", "aq", "nc", "fj", "tl", "bs", "vu", "fk", "gs", "jm", "xc", "bn", "tt", "cv", "pf", "ws", "lu", "fo", "vi", "cw", "sx", "dm", "to", "ki", "fm", "ad", "mp", "pw", "sc", "ag", "bb", "tc", "vc", "lc", "gd", "mt", "mv", "ky", "kn", "ms", "bl", "nu", "pm", "ck", "wf", "as", "mh", "aw", "li", "vg", "sh", "je", "ai", "mf", "gg", "sm", "bm", "tv", "nr", "gi", "pn", "mc", "va", "im", "gu", "sg", "nf", "tk", "io", "CX", "CC", "HM", "nl", "nlx", "bq", "uz", "au", "me", "pe", "bf", "gf", "ly", "by", "pk", "ci", "dz", "ch", "cm", "mk", "bw", "ke", "jo", "ml", "cd", "xs", "af", "gh", "at", "ug", "co", "iq", "ne", "lv", "ro", "zm", "et", "gt", "sr", "eh", "cz", "td", "al", "sy", "kg", "cr", "py", "pl", "na", "za", "eg", "ba", "sv", "gy", "be", "ls", "bg", "bi", "dj", "uy", "cg", "rw", "am", "sn", "tg", "hu", "mw", "tj", "is", "ni", "ma", "lr", "cf", "sk", "lt", "zw", "il", "la", "kp", "tm", "bj", "si", "ua", "np", "mn", "bt", "sd", "ss"]
+
+
 				$(window).load(function () {
 					svgdom = $(document.getElementById('svgmap').contentDocument);
 					
@@ -49,6 +52,9 @@
 							colourup(val.country, "#e0e0e0");
 						});
 					});
+					// $.each( rest, function( key, val ) {
+					// 		colourup(val, "green");
+					// });
 				});
 				var colourup = function(id,colour) {
 						$("[id='" + id + "']", svgdom).attr("fill", colour);
@@ -63,6 +69,9 @@
 
 							});
 				}
+				$.each( rest, function( key, val ) {
+							colourup(val, "#800000");
+				});
 
 				// $( window ).resize(function() {
 				// //$( "#svgmap" ).css("width", this.width()).css("height", this.height());
