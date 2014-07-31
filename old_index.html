@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Hello World!</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style type="text/css">
+			body{
+				margin: 0;
+				background: white;
+			}
+			#svgmap{
+				width: 100%;
+				height: 100%;
+			}
+			#mx path{
+				fill:red;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="select_region('africa')">Africa</button>
+		<button onclick="select_region('europe')">Europe</button>
+		<button onclick="select_region('asia')">Asia</button>
+		<button onclick="select_region('north america')">North America</button>
+		<button onclick="select_region('schengen')">Schengen</button>
+		<button onclick="select_region('eu')">EU</button>
+		<button onclick="select_region('african union')">African Union</button>
+		<button onclick="select_region('arab league')">Arab league</button>
+		<button onclick="select_region('Middle East')">Middle East</button>
+		<button onclick="select_region('clear')">RESET</button>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
+		<section id="focal">
+			<div class="parent">
+				<div class="panzoom">
+					<object type="image/svg+xml" data="world.svg" id="svgmap"></object>
+					<!-- <img src="world.svg" id="svgmap" type="image/svg+xml"> -->
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript">
+				var json_data 	= '',
+					svgdom 		= '';
+				$(window).load(function () {
+					svgdom = $(document.getElementById('svgmap').contentDocument);
+					
+					$.getJSON( "data.json", function( data ) {
+						json_data = data;
+						$.each( data, function( key, val ) {
+							colourup(val.country, "#e0e0e0");
+						});
+					});
+				});
+				var colourup = function(id,colour) {
+						$("[id='" + id + "']", svgdom).attr("fill", colour);
+				};
+				var select_region = function(region){
+							$.each( json_data, function( key, val ) {
+								if(region.toLowerCase() != "clear"){
+									if(val.geo_regions.indexOf(region.toLowerCase()) > -1){
+										colourup(val.country,"blue");
+									}else colourup(val.country,"#e0e0e0");
+								}else colourup(val.country,"#e0e0e0");
+
+							});
+				}
+
+				// $( window ).resize(function() {
+				// //$( "#svgmap" ).css("width", this.width()).css("height", this.height());
+				// });
+
+				// (function() {
+				// 	var $section = $('#focal');
+				// 	var $panzoom = $section.find('.panzoom').panzoom();
+				// 	$panzoom.parent().on('mousewheel.focal', function( e ) {
+				// 		e.preventDefault();
+				// 		var delta = e.delta || e.originalEvent.wheelDelta;
+				// 		var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+				// 		$panzoom.panzoom('zoom', zoomOut, {
+				// 			increment: 	0.1,
+				// 			animate: 	true,
+				// 			minScale: 	1,
+				// 			maxScale: 100,
+				// 			focal: 		e,
+				// 			onZoom: (function(){
+				// 				$('#svgmap').css('display', 'none').height();
+
+				// 			})
+				// 		});
+				// 	});
+				// })();
+		</script>
+		<style></style>
+	</body>
+</html>
