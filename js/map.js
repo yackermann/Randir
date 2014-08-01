@@ -6,7 +6,7 @@ var styleCache = {};
 var vectorLayer = new ol.layer.Vector({
 		source: new ol.source.GeoJSON({
 			projection: 'EPSG:3857',
-			url: 'data/countries.geojson'
+			url: 'geo/world.geo.json'
 		}),
 		style: function(feature, resolution) {
 			var text = resolution < 5000 ? feature.get('name') : '';
