@@ -1,46 +1,45 @@
-		
-var x = 1;
-
-
 var styleCache = {};
 var vectorLayer = new ol.layer.Vector({
-		source: new ol.source.GeoJSON({
-			projection: 'EPSG:3857',
-			url: 'geo/world.geo.json'
-		}),
-		style: function(feature, resolution) {
-			var text = resolution < 5000 ? feature.get('name') : '';
-			if (!styleCache[text]) {
-				 styleCache[text] = [new ol.style.Style({
-						fill: new ol.style.Fill({
-								color: 'rgba(255, 255, 255, 0.6)'
-						}),
-						stroke: new ol.style.Stroke({
-								color: '#319FD3',
-								width: 1
-						}),
-						text: new ol.style.Text({
-								font: '12px Calibri,sans-serif',
-								text: text,
-								fill: new ol.style.Fill({
-									color: '#000'
-								}),
-								stroke: new ol.style.Stroke({
-									color: '#fff',
-									width: 3
-								})
-						})
-				 })];
-			}
-			return styleCache[text];
+	source: new ol.source.GeoJSON({
+		projection: 'EPSG:3857',
+		url: 'geo/world.geo.json'
+	}),
+	style: function(feature, resolution) {
+		var text = resolution < 5000 ? feature.get('name') : '';
+		if (!styleCache[text]) {
+			styleCache[text] = [new ol.style.Style({
+				fill: new ol.style.Fill({
+					color: 'rgba(255, 255, 255, 0.6)'
+				}),
+
+				stroke: new ol.style.Stroke({
+					color: '#319FD3',
+					width: 1
+				}),
+
+				text: new ol.style.Text({
+					font: '12px Calibri,sans-serif',
+					text: text,
+					fill: new ol.style.Fill({
+						color: '#000'
+					}),
+					stroke: new ol.style.Stroke({
+						color: '#fff',
+						width: 3
+					})
+				})
+
+			})];
 		}
+		return styleCache[text];
+	}
 });
 
 var map = new ol.Map({
 	controls: ol.control.defaults().extend([
 		new ol.control.FullScreen()
 	]),
-		layers: [
+	layers: [
 		// new ol.layer.Tile({
 		// 	 source: new ol.source.MapQuest({layer: 'sat'})
 		// }),
@@ -50,55 +49,55 @@ var map = new ol.Map({
 		//	 })
 		// }),
 		new ol.layer.Tile({
-		source: new ol.source.OSM()
+			source: new ol.source.OSM()
 		}),
-			vectorLayer
-		],
-		target: 'osm',
-		view: new ol.View({
-			center: [0, 0],
-			zoom: 2
-		})
+		vectorLayer
+	],
+	target: 'osm',
+	view: new ol.View({
+		center: [0, 0],
+		zoom: 2
+	})
 });
 
-var highlightStyleCache = {};
-
-var featureOverlay = new ol.FeatureOverlay({
+var hscache = {};
+var c = {
+	overlay: new ol.FeatureOverlay({
 		map: map,
 		style: function(feature, resolution) {
 			var text = resolution < 5000 ? feature.get('name') : '';
-			if (!highlightStyleCache[text]) {
-				 highlightStyleCache[text] = [new ol.style.Style({
-						stroke: new ol.style.Stroke({
-								color: '#f00',
-								width: 1
-						}),
+			if (!hscache[text]) {
+				hscache[text] = [new ol.style.Style({
+					stroke: new ol.style.Stroke({
+						color: '#f00',
+						width: 1
+					}),
+					fill: new ol.style.Fill({
+						color: 'rgba(255,0,0,0.1)'
+					}),
+					text: new ol.style.Text({
+						font: '12px Calibri,sans-serif',
+						text: text,
 						fill: new ol.style.Fill({
-								color: 'rgba(255,0,0,0.1)'
+							color: '#000'
 						}),
-						text: new ol.style.Text({
-								font: '12px Calibri,sans-serif',
-								text: text,
-								fill: new ol.style.Fill({
-									color: '#000'
-								}),
-								stroke: new ol.style.Stroke({
-									color: '#f00',
-									width: 3
-								})
+						stroke: new ol.style.Stroke({
+							color: '#f00',
+							width: 3
 						})
-				 })];
+					})
+				})];
 			}
-			return highlightStyleCache[text];
+			return hscache[text];
 		}
-});
-
-var highlight;
-var displayFeatureInfo = function(pixel) {
+	}),
+	highlight: undefined,
+	info: function(pixel) {
 
 		var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
 			return feature;
 		});
+		console.log(feature);
 
 		var info = document.getElementById('info');
 		if (feature) {
@@ -107,23 +106,30 @@ var displayFeatureInfo = function(pixel) {
 			info.innerHTML = '&nbsp;';
 		}
 
-		if (feature !== highlight) {
-			if (highlight) {
-				 featureOverlay.removeFeature(highlight);
+		if (feature !== this.highlight) {
+			if (this.highlight) {
+				this.overlay.removeFeature(this.highlight);
 			}
 			if (feature) {
-				 featureOverlay.addFeature(feature);
+				this.overlay.addFeature(feature);
 			}
-			highlight = feature;
+			this.highlight = feature;
 		}
 
-};
+	}
+}
+
+
 
 $(map.getViewport()).on('mousemove', function(evt) {
-		var pixel = map.getEventPixel(evt.originalEvent);
-		displayFeatureInfo(pixel);
+	var pixel = map.getEventPixel(evt.originalEvent);
+	c.info(pixel);
 });
 
 map.on('click', function(evt) {
-		displayFeatureInfo(evt.pixel);
+	c.info(evt.pixel);
 });
+var jdata = "";
+$.getJSON( "data/data.json", function( data ) {
+	jdata = data;
+})
