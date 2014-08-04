@@ -70,6 +70,7 @@
 							}else console.log(val.cca2);
 						})
 					})
+
 				},
 
 				/*@Removes all features from map@*/
@@ -80,39 +81,48 @@
 				},
 
 				highlighted: undefined,
+				selected: undefined,
 				hscache: {},
 
-				Highlight: new ol.FeatureOverlay({
+				Select: new ol.FeatureOverlay({
 					map: map,
-						style: function(feature, resolution) {
-							var text = resolution < 5000 ? feature.get('name') : '';
-							if (!dataDraw.hscache[text]) {
-								dataDraw.hscache[text] = [new ol.style.Style({
+					style: function(feature, resolution) {
+						var text = resolution < 5000 ? feature.get('name') : '';
+						if (!dataDraw.hscache[text]) {
+							dataDraw.hscache[text] = [new ol.style.Style({
+								stroke: new ol.style.Stroke({
+									color: '#f00',
+									width: 1
+								}),
+								fill: new ol.style.Fill({
+									color: 'rgba(255,0,0,0.1)'
+								}),
+								text: new ol.style.Text({
+									font: '12px Calibri,sans-serif',
+									text: text,
+									fill: new ol.style.Fill({
+										color: '#000'
+									}),
 									stroke: new ol.style.Stroke({
 										color: '#f00',
-										width: 1
-									}),
-									fill: new ol.style.Fill({
-										color: 'rgba(255,0,0,0.1)'
-									}),
-									text: new ol.style.Text({
-										font: '12px Calibri,sans-serif',
-										text: text,
-										fill: new ol.style.Fill({
-											color: '#000'
-										}),
-										stroke: new ol.style.Stroke({
-											color: '#f00',
-											width: 3
-										})
+										width: 3
 									})
-								})];
-							}
-							return dataDraw.hscache[text];
+								})
+							})];
 						}
+						return dataDraw.hscache[text];
+					}
+				}),
+				Highlight: new ol.FeatureOverlay({
+					map: map,
+					style: new ol.style.Style({
+							fill: new ol.style.Fill({
+								color: 'rgba(255,0,0,0.1)'
+							}),
+						})
 				}),
 
-				info: function(pixel) {
+				info: function(pixel, a) {
 
 					var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
 						return feature;
@@ -121,16 +131,24 @@
 						options.debug.html(feature ? feature.getId() + ': ' + feature.get('name') : '&nbsp;');
 					}
 
+					var action = {
+						"highlight":function(){
+								if (feature !== dataDraw.highlighted) {
+									if (dataDraw.highlighted) dataDraw.Highlight.removeFeature(dataDraw.highlighted);
+									if (feature) dataDraw.Highlight.addFeature(feature);
+									dataDraw.highlighted = feature;
+								}
+						},
 
-					if (feature !== this.highlight) {
-						if (this.highlight) {
-							this.Highlight.removeFeature(this.highlight);
+						"select": function(){
+								if (feature !== dataDraw.selected) {
+									if (dataDraw.selected) dataDraw.Select.removeFeature(dataDraw.selected);
+									if (feature) dataDraw.Select.addFeature(feature);
+									dataDraw.selected = feature;
+								}
 						}
-						if (feature) {
-							this.Highlight.addFeature(feature);
-						}
-						this.highlight = feature;
-					}
+					}[a]()
+					
 
 				}
 
@@ -142,11 +160,11 @@
 			$(window).load(function() {
 				dataDraw.Fill()
 				map.on('click', function(evt) {
-					dataDraw.info(evt.pixel);
+					dataDraw.info(evt.pixel,"select");
 				});
 
 				$(map.getViewport()).on('mousemove', function(evt) {
-					dataDraw.info(map.getEventPixel(evt.originalEvent));
+					dataDraw.info(map.getEventPixel(evt.originalEvent),"highlight");
 				});
 			})
 
