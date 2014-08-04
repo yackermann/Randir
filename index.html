@@ -62,8 +62,8 @@
 	</head>
 	<body>
 		<div id="osm" class="map"></div>
-	    <!-- <div id="feature_info"></div> -->
-	    <!-- <div id="infobox"></div> -->
+	    <div id="feature_info"></div>
+	    <div id="infobox"></div>
 	    <div class="content">
 	    	<div class="inclass">
 	    		<h1>Hi everyone! I am from <span contenteditable="true">Russia</span>!</h1>
@@ -79,7 +79,9 @@
 				data: {
 					info: 'data/countries.json',
 					geo: 'data/world.geo.json'
-				}
+				},
+				wiki: $("#infobox"),
+				debug: $("#feature_info")
 			})
 		</script>
 	</body>

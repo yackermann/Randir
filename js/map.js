@@ -52,7 +52,9 @@
 						})
 					})
 				},
-				Fill: (function(){
+
+				/*@Adds features to the map@*/
+				Fill: function(){
 					$.getJSON(options.data.info, function( data ) {
 						$.each(data, function( key, val ) {
 							var x = vectorSource.getFeatureById(val.cca2);
@@ -65,19 +67,90 @@
 										features: [x]
 									})
 								);
-
-							}else{
-								console.log(val.cca2)
-							}
+							}else console.log(val.cca2);
 						})
 					})
-				})(),
+				},
+
+				/*@Removes all features from map@*/
 				Clear: function(){
 					while(map.getOverlays().getArray().length > 0){
 						map.removeOverlay(map.getOverlays().getArray()[0])
 					}
+				},
+
+				highlighted: undefined,
+				hscache: {},
+
+				Highlight: new ol.FeatureOverlay({
+					map: map,
+						style: function(feature, resolution) {
+							var text = resolution < 5000 ? feature.get('name') : '';
+							if (!dataDraw.hscache[text]) {
+								dataDraw.hscache[text] = [new ol.style.Style({
+									stroke: new ol.style.Stroke({
+										color: '#f00',
+										width: 1
+									}),
+									fill: new ol.style.Fill({
+										color: 'rgba(255,0,0,0.1)'
+									}),
+									text: new ol.style.Text({
+										font: '12px Calibri,sans-serif',
+										text: text,
+										fill: new ol.style.Fill({
+											color: '#000'
+										}),
+										stroke: new ol.style.Stroke({
+											color: '#f00',
+											width: 3
+										})
+									})
+								})];
+							}
+							return dataDraw.hscache[text];
+						}
+				}),
+
+				info: function(pixel) {
+
+					var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+						return feature;
+					});
+					if (options.debug != undefined){
+						options.debug.html(feature ? feature.getId() + ': ' + feature.get('name') : '&nbsp;');
+					}
+
+
+					if (feature !== this.highlight) {
+						if (this.highlight) {
+							this.Highlight.removeFeature(this.highlight);
+						}
+						if (feature) {
+							this.Highlight.addFeature(feature);
+						}
+						this.highlight = feature;
+					}
+
 				}
+
 			}
+			// $(map.getViewport()).on('mousemove', function(evt) {
+			// 	var pixel = map.getEventPixel(evt.originalEvent);
+			// 	c.info(pixel);
+			// });
+			$(window).load(function() {
+				dataDraw.Fill()
+				map.on('click', function(evt) {
+					dataDraw.info(evt.pixel);
+				});
+
+				$(map.getViewport()).on('mousemove', function(evt) {
+					dataDraw.info(map.getEventPixel(evt.originalEvent));
+				});
+			})
+
+
 
 	};
 }( jQuery ));
