@@ -75,7 +75,12 @@
 		<!--<script src="http://ol3js.org/en/master/build/ol.js" type="text/javascript"></script>-->
 		<script type="text/javascript" src="js/map.js"></script>
 		<script type="text/javascript">
-			$("#osm").cigto()
+			$("#osm").cigto({
+				data: {
+					info: 'data/countries.json',
+					geo: 'data/world.geo.json'
+				}
+			})
 		</script>
 	</body>
 </html>
