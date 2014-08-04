@@ -3,7 +3,18 @@
 	$.fn.cigto = function(params) {
  
 		var options = $.extend({ zoom: 2,center: [0,0] }, params),
- 			cache = {},
+ 			cache = {
+ 				get: function(url){
+
+ 					if(localStorage.getItem(url) == null){
+	 					$.getJSON(url, function( data ) { 
+	 						localStorage[url] = JSON.stringify(data);
+	 						return localStorage[url];
+	 					})
+	 				}else return JSON.parse(localStorage[url]);
+ 				}
+ 				// remove: function(url){}
+ 			},
 			map = new ol.Map({
 				controls: ol.control.defaults().extend([
 					new ol.control.FullScreen()
@@ -43,7 +54,7 @@
 				},
 				Fill: (function(){
 					$.getJSON(options.data.info, function( data ) {
-						$.each( data, function( key, val ) {
+						$.each(data, function( key, val ) {
 							var x = vectorSource.getFeatureById(val.cca2);
 							if(x != null){
 								x.set("info",val);
@@ -58,7 +69,7 @@
 							}else{
 								console.log(val.cca2)
 							}
-						});
+						})
 					})
 				})(),
 				Clear: function(){
