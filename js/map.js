@@ -3,18 +3,20 @@
 	$.fn.cigto = function(params) {
  
 		var options = $.extend({ zoom: 2,center: [0,0] }, params),
- 			cache = {
- 				get: function(url){
+			cache = {
+				get: function(url){
 
- 					if(localStorage.getItem(url) == null){
-	 					$.getJSON(url, function( data ) { 
-	 						localStorage[url] = JSON.stringify(data);
-	 						return localStorage[url];
-	 					})
-	 				}else return JSON.parse(localStorage[url]);
- 				}
- 				// remove: function(url){}
- 			},
+					if(localStorage.getItem(url) == null){
+						$.getJSON(url, function( data ) { 
+
+							localStorage[url] = data.parse.title["*"]
+							// localStorage[url] = JSON.stringify(data);
+						})
+						return localStorage[url];
+					}else return localStorage[url];
+				}
+				// remove: function(url){}
+			},
 			map = new ol.Map({
 				controls: ol.control.defaults().extend([
 					new ol.control.FullScreen()
@@ -27,7 +29,8 @@
 				target: this.attr("id"),
 				view: new ol.View({
 					center: options.center,
-					zoom: options.zoom
+					zoom: options.zoom,
+					minZoom: 2,
 				})
 			}),
 
@@ -47,7 +50,7 @@
 										 "Africa": "rgba(255, 165, 0, 0.1)",
 										 "Oceania": "rgba(0, 0, 255, 0.1)",
 										 "Americas": "rgba(0, 255, 0, 0.1)"
-										}[reg] || "rgba(0, 255, 0, 1)"
+										}[reg] || "rgba(0, 0, 0, 0.4)"
 							})()
 						})
 					})
@@ -127,6 +130,7 @@
 					var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
 						return feature;
 					});
+
 					if (options.debug != undefined){
 						options.debug.html(feature ? feature.getId() + ': ' + feature.get('name') : '&nbsp;');
 					}
@@ -142,20 +146,28 @@
 
 						"select": function(){
 								if (feature !== dataDraw.selected) {
-									if (dataDraw.selected) dataDraw.Select.removeFeature(dataDraw.selected);
-									if (feature) dataDraw.Select.addFeature(feature);
+									if (dataDraw.selected){
+										options.wiki.html('&nbsp;')
+										dataDraw.Select.removeFeature(dataDraw.selected);
+									}
+									if (feature){
+										dataDraw.Select.addFeature(feature);
+										// $("body").append('<img class="loader">')
+										var z = $.Deferred().done(function(x){
+											options.wiki.html(x)
+										})
+										z.resolve(cache.get("http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?"))
+									}
 									dataDraw.selected = feature;
 								}
 						}
 					}[a]()
-					
-
 				}
 
 			}
 			// $(map.getViewport()).on('mousemove', function(evt) {
-			// 	var pixel = map.getEventPixel(evt.originalEvent);
-			// 	c.info(pixel);
+			//	var pixel = map.getEventPixel(evt.originalEvent);
+			//	c.info(pixel);
 			// });
 			$(window).load(function() {
 				dataDraw.Fill()

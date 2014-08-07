@@ -58,6 +58,34 @@
 
 			}
 
+
+			@-webkit-keyframes loaderSprite {
+			    from { background-position: 0px; }
+			    to { background-position: -2500px; }
+			}
+
+			@-moz-keyframes loaderSprite {
+			    from { background-position: 0px; }
+			    to { background-position: -2500px; }
+			}
+
+			@keyframes loaderSprite {
+			    from { background-position: 0px; }
+			    to { background-position: -2500px; }
+			}
+
+			.loader {
+				top: 10px;
+				left: 10px;
+			    width: 100px;
+			    height: 100px;
+			    border:none;
+			    background-image: url("img/ajax.png");
+			    -webkit-animation: loaderSprite 1s steps(25, end) infinite;
+			    -moz-animation: loaderSprite 1s steps(25, end) infinite;
+			    animation: loaderSprite 1s steps(25, end) infinite;
+			}
+
 		</style>
 	</head>
 	<body>
