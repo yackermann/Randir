@@ -6,14 +6,15 @@
 			cache = {
 				get: function(url){
 
-					if(localStorage.getItem(url) == null){
+					// if(localStorage.getItem(url) == null){
 						$.getJSON(url, function( data ) { 
 
-							localStorage[url] = data.parse.title["*"]
+							// localStorage[url] = data.parse.title["*"]
+							return data
 							// localStorage[url] = JSON.stringify(data);
 						})
-						return localStorage[url];
-					}else return localStorage[url];
+						// return localStorage[url];
+					// }else return localStorage[url];
 				}
 				// remove: function(url){}
 			},
@@ -153,10 +154,19 @@
 									if (feature){
 										dataDraw.Select.addFeature(feature);
 										// $("body").append('<img class="loader">')
-										var z = $.Deferred().done(function(x){
-											options.wiki.html(x)
+										// var z = $.Deferred().done(function(x){
+											// options.wiki.html(x)
+										// })
+										// z.resolve(cache.get("http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?"))
+										console.log("Getting " + feature.get("info").name)
+										$.getJSON("https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?", function( data ) { 
+											console.log("Got " + feature.get("info").name)
+											// localStorage[url] = data.parse.title["*"]
+											console.log(JSON.stringify(data).parse)
+											$(options.wiki).html(data.parse.text["*"])
+											
+											// localStorage[url] = JSON.stringify(data);
 										})
-										z.resolve(cache.get("http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?"))
 									}
 									dataDraw.selected = feature;
 								}
