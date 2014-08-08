@@ -189,7 +189,7 @@
 								}[t] || "Something else..."
 							}
 						
-						options.debug.html(feature ? feature.getId() + ' : ' + feature.get('name') + ' : ' + visadec(feature.get('type')) : '&nbsp;');
+						options.debug.html(feature ? "<h3>" + feature.getId() + ' : ' + feature.get('name') + ' : ' + visadec(feature.get('type')) + "</h3>" : '&nbsp;');
 					}
 
 					var action = {
@@ -204,7 +204,7 @@
 						"select": function(){
 								if (feature !== dataDraw.selected) {
 									if (dataDraw.selected){
-										options.wiki.html('&nbsp;')
+										options.wiki.empty()
 										dataDraw.Select.removeFeature(dataDraw.selected);
 									}
 									if (feature){
@@ -242,10 +242,10 @@
 						$.each(data,function(key, val){
 							struct[val.cca2] = val
 						})
-						dataDraw.Visa("RU");
+						dataDraw.Visa("IL");
 					}	
 
-				}, 500);
+				}, 300);
 				
 				
 				// dataDraw.Fill()
