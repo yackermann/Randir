@@ -5,18 +5,15 @@
 		var options = $.extend({ zoom: 2,center: [0,0] }, params),
 			cache = {
 				get: function(url){
+					if(localStorage.getItem(url) == null){
 
-					// if(localStorage.getItem(url) == null){
-						$.getJSON(url, function( data ) { 
+						$.when($.ajax({url: url, dataType: 'json', async: false})).done(function( data ){
+								localStorage[url] = JSON.stringify(data);
+								return localStorage[url];
+						});
 
-							// localStorage[url] = data.parse.title["*"]
-							return data
-							// localStorage[url] = JSON.stringify(data);
-						})
-						// return localStorage[url];
-					// }else return localStorage[url];
+					}else return localStorage[url];
 				}
-				// remove: function(url){}
 			},
 			map = new ol.Map({
 				controls: ol.control.defaults().extend([
@@ -153,20 +150,25 @@
 									}
 									if (feature){
 										dataDraw.Select.addFeature(feature);
-										// $("body").append('<img class="loader">')
-										// var z = $.Deferred().done(function(x){
-											// options.wiki.html(x)
-										// })
-										// z.resolve(cache.get("http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?"))
-										console.log("Getting " + feature.get("info").name)
-										$.getJSON("https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?", function( data ) { 
-											console.log("Got " + feature.get("info").name)
-											// localStorage[url] = data.parse.title["*"]
-											console.log(JSON.stringify(data).parse)
-											$(options.wiki).html(data.parse.text["*"])
-											
-											// localStorage[url] = JSON.stringify(data);
-										})
+										var url = "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
+										var x;
+										var resolver = setInterval(function(){
+											if(!x){
+												x = cache.get(url);
+											}else{
+												if (feature == dataDraw.selected) {
+													clearInterval(resolver)
+													var datap = JSON.parse(x)
+												  	var blurb = $('<div></div>').html(datap.parse.text["*"]);
+													blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+													blurb.find('sup').remove();
+													blurb.find('.mw-ext-cite-error').remove();
+													blurb.find('#coordinates').parent().parent().remove()
+													blurb.find('.nowrap').remove()
+													$(options.wiki).html($(blurb).find('p'));
+												}
+											}
+										}, 500);
 									}
 									dataDraw.selected = feature;
 								}
