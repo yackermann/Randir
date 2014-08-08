@@ -1,8 +1,8 @@
 (function ( $ ) {
  
 	$.fn.cigto = function(params) {
- 
-		var options = $.extend({ zoom: 2,center: [0,0] }, params),
+ 		var struct = {},
+			options = $.extend({ zoom: 2,center: [0,0]}, params),
 			cache = {
 				get: function(url){
 					if(localStorage.getItem(url) == null){
@@ -43,7 +43,7 @@
 					var overlayer = function(k,v){
 						var x = vectorSource.getFeatureById(k);
 						if(x != null){
-							// x.set("info",val);
+							x.set("info",struct[k]);
 							map.addOverlay(
 								new ol.FeatureOverlay({
 									map:map,
@@ -224,14 +224,19 @@
 			}
 			$(window).load(function() {
 				
-				// var resolver = setInterval(function(){
-				// 	if(cache.get(url)){
-				// 		clearInterval(resolver);
+				var resolver = setInterval(function(){
+					if(cache.get("data/countries.json")){
+						clearInterval(resolver);
+						var data = JSON.parse(cache.get("data/countries.json"));
+						$.each(data,function(key, val){
+							struct[val.cca2] = val
+						})
+						dataDraw.Visa("RU");
+					}	
 
-				// 	}
-
-				// }, 500);
-				dataDraw.Visa("RU")
+				}, 500);
+				
+				
 				// dataDraw.Fill()
 				map.on('click', function(evt) {
 					dataDraw.info(evt.pixel,"select");
