@@ -177,10 +177,6 @@
 				}
 
 			}
-			// $(map.getViewport()).on('mousemove', function(evt) {
-			//	var pixel = map.getEventPixel(evt.originalEvent);
-			//	c.info(pixel);
-			// });
 			$(window).load(function() {
 				dataDraw.Fill()
 				map.on('click', function(evt) {
