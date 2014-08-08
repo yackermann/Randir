@@ -44,6 +44,7 @@
 						var x = vectorSource.getFeatureById(k);
 						if(x != null){
 							x.set("info",struct[k]);
+							x.set("type",v);
 							map.addOverlay(
 								new ol.FeatureOverlay({
 									map:map,
@@ -178,7 +179,17 @@
 					});
 
 					if (options.debug != undefined){
-						options.debug.html(feature ? feature.getId() + ': ' + feature.get('name') : '&nbsp;');
+						var visadec = function(t){
+							return {
+								 "a": "Visa on arrival.",
+								 "r": "Visa required.",
+								 "d": "Visa refused.",
+								 "u": "Visa not required, free border agreement.",
+								 "f": "Visa not required"
+								}[t] || "Something else..."
+							}
+						
+						options.debug.html(feature ? feature.getId() + ' : ' + feature.get('name') + ' : ' + visadec(feature.get('type')) : '&nbsp;');
 					}
 
 					var action = {
