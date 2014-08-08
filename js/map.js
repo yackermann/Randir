@@ -38,21 +38,57 @@
 			}),
 
 			dataDraw = {
-				getStyle: function(reg){
-					return new ol.style.Style({
-						fill: new ol.style.Fill({
-							color: (function() {
-								return	{
-										 "Asia": "rgba(255, 255, 0, 0.1)",
-										 "Europe": "rgba(255, 0, 0, 0.1)",
-										 "Africa": "rgba(255, 165, 0, 0.1)",
-										 "Oceania": "rgba(0, 0, 255, 0.1)",
-										 "Americas": "rgba(0, 255, 0, 0.1)"
-										}[reg] || "rgba(0, 0, 0, 0.4)"
-							})()
+				/*@Adds features to the map@*/
+				Visa: function(from){
+					var overlayer = function(k,v){
+						var x = vectorSource.getFeatureById(k);
+						if(x != null){
+							// x.set("info",val);
+							map.addOverlay(
+								new ol.FeatureOverlay({
+									map:map,
+									style: new ol.style.Style({
+										fill: new ol.style.Fill({
+											color: (function() {
+												return	{
+														 "a": "rgba(255, 255, 0, 0.1)",
+														 "r": "rgba(255, 0, 0, 0.1)",
+														 "d": "rgba(0, 0, 0, 0.4)",
+														 "u": "rgba(0, 0, 255, 0.1)",
+														 "f": "rgba(0, 255, 0, 0.1)"
+														}[v] || "rgba(255, 165, 0, 0.1)"
+											})()
+										})
+									}),
+									features: [x]
+								})
+							);
+						}else console.log(val.type);
+					};
+					$.getJSON("data/visa/" + from + ".visa.json", function( data ) {
+
+						overlayer(from,"u")
+						// var x = vectorSource.getFeatureById(from);
+						$.each(data.requirements, function( key, val ) {
+							overlayer(key,val.type)
 						})
 					})
 				},
+				// getStyle: function(reg){
+				// 	return new ol.style.Style({
+				// 		fill: new ol.style.Fill({
+				// 			color: (function() {
+				// 				return	{
+				// 						 "Asia": "rgba(255, 255, 0, 0.1)",
+				// 						 "Europe": "rgba(255, 0, 0, 0.1)",
+				// 						 "Africa": "rgba(255, 165, 0, 0.1)",
+				// 						 "Oceania": "rgba(0, 0, 255, 0.1)",
+				// 						 "Americas": "rgba(0, 255, 0, 0.1)"
+				// 						}[reg] || "rgba(0, 0, 0, 0.4)"
+				// 			})()
+				// 		})
+				// 	})
+				// },
 
 				/*@Adds features to the map@*/
 				Fill: function(){
@@ -64,7 +100,19 @@
 								map.addOverlay(
 									new ol.FeatureOverlay({
 										map:map,
-										style: dataDraw.getStyle(val.region),
+										style: new ol.style.Style({
+											fill: new ol.style.Fill({
+												color: (function() {
+													return	{
+															 "Asia": "rgba(255, 255, 0, 0.1)",
+															 "Europe": "rgba(255, 0, 0, 0.1)",
+															 "Africa": "rgba(255, 165, 0, 0.1)",
+															 "Oceania": "rgba(0, 0, 255, 0.1)",
+															 "Americas": "rgba(0, 255, 0, 0.1)"
+															}[val.region] || "rgba(0, 0, 0, 0.4)"
+												})()
+											})
+										}),
 										features: [x]
 									})
 								);
@@ -151,14 +199,11 @@
 									if (feature){
 										dataDraw.Select.addFeature(feature);
 										var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
-										var x;
 										var resolver = setInterval(function(){
-											if(!x){
-												x = cache.get(url);
-											}else{
+											if(cache.get(url)){
 												if (feature == dataDraw.selected) {
 													clearInterval(resolver)
-													var datap = JSON.parse(x)
+													var datap = JSON.parse(cache.get(url))
 												  	var blurb = $('<div></div>').html(datap.parse.text["*"]);
 													blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
 													blurb.find('sup').remove();
@@ -178,7 +223,16 @@
 
 			}
 			$(window).load(function() {
-				dataDraw.Fill()
+				
+				// var resolver = setInterval(function(){
+				// 	if(cache.get(url)){
+				// 		clearInterval(resolver);
+
+				// 	}
+
+				// }, 500);
+				dataDraw.Visa("RU")
+				// dataDraw.Fill()
 				map.on('click', function(evt) {
 					dataDraw.info(evt.pixel,"select");
 				});
