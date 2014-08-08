@@ -150,7 +150,7 @@
 									}
 									if (feature){
 										dataDraw.Select.addFeature(feature);
-										var url = "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
+										var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
 										var x;
 										var resolver = setInterval(function(){
 											if(!x){
