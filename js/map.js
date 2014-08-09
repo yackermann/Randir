@@ -56,7 +56,8 @@
 														 "r": "rgba(255, 0, 0, 0.1)",
 														 "d": "rgba(0, 0, 0, 0.4)",
 														 "u": "rgba(0, 0, 255, 0.1)",
-														 "f": "rgba(0, 255, 0, 0.1)"
+														 "f": "rgba(0, 255, 0, 0.1)",
+														 "self": "rgba(0, 0, 255, 0.2)",
 														}[v] || "rgba(255, 165, 0, 0.1)"
 											})()
 										})
@@ -68,7 +69,7 @@
 					};
 					$.getJSON("data/visa/" + from + ".visa.json", function( data ) {
 
-						overlayer(from,"u")
+						overlayer(from,"self")
 						// var x = vectorSource.getFeatureById(from);
 						$.each(data.requirements, function( key, val ) {
 							overlayer(key,val.type)
@@ -181,6 +182,7 @@
 					if (options.debug != undefined){
 						var visadec = function(t){
 							return {
+								 "self": feature.get('name'),
 								 "a": "Visa on arrival.",
 								 "r": "Visa required.",
 								 "d": "Visa refused.",
@@ -242,7 +244,7 @@
 						$.each(data,function(key, val){
 							struct[val.cca2] = val
 						})
-						dataDraw.Visa("IL");
+						dataDraw.Visa("RU");
 					}	
 
 				}, 300);
