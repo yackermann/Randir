@@ -12,14 +12,7 @@
 				width: 100%;
 				height: 100%;
 			}
-			#feature_info {
-				position: absolute;
-				font-size: 0.7em;
-				top: 10px;
-				right: 10px;
-				background-color: lightgrey;
-				padding: 4px;
-			}
+
 			.content {
 				position: fixed;
 				width: 50%;
@@ -53,8 +46,16 @@
 				top: 10px;
 				left: 10px;
 				width: 25%;
-
 			}
+			#visainfo{
+				position: absolute;
+				font-size: 0.7em;
+				top: 10px;
+				right: 10px;
+				background-color: white;
+				padding: 4px;
+			}
+
 			.inner {
 				background-color: white;
 				padding: 10px;
@@ -77,25 +78,33 @@
 				from { background-position: 0px; }
 				to { background-position: -2500px; }
 			}
-
 			.loader {
 				top: 10px;
 				left: 10px;
 				width: 100px;
 				height: 100px;
-				border:none;
 				background-image: url("img/ajax.png");
 				-webkit-animation: loaderSprite 1s steps(25, end) infinite;
 				-moz-animation: loaderSprite 1s steps(25, end) infinite;
 				animation: loaderSprite 1s steps(25, end) infinite;
 			}
-
 		</style>
 	</head>
 	<body>
 		<div id="osm" class="map"></div>
-		<div id="feature_info"></div>
+		
+		<div id="visainfo">
+			<div id="feature_info"></div>
+				 	<h3>Visa on arrival.<div style="width:20px;height:20px;background:rgba(255, 255, 0, 0.2);"></div></h3>
+				 	<h3>Visa required.<div style="width:20px;height:20px;background:rgba(255, 0, 0, 0.2);"></div></h3>
+				 	<h3>Visa refused.<div style="width:20px;height:20px;background:rgba(0, 0, 0, 0.5);"></div></h3>
+				 	<h3>Free border agreement. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.2);"></div></h3>
+				 	<h3>Visa not required. <div style="width:20px;height:20px;background:rgba(0, 255, 0, 0.2);"></div></h3>
+				 	<h3>Self. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.4);"></div></h3>
+		</div>
+
 		<div id="infobox">
+			<div id="loader"></div>
 			<div class="inner"></div>
 		</div>
 		<div class="content">
@@ -116,8 +125,9 @@
 					info: 'data/countries.json',
 					geo: 'data/world.geo.json'
 				},
-				wiki: $("#infobox > div"),
-				debug: $("#feature_info")
+				wiki: $("#infobox > div.inner"),
+				debug: $("#feature_info"),
+				loader: $("#loader")
 			})
 		</script>
 	</body>

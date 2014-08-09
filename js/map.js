@@ -68,29 +68,12 @@
 						}else console.log(val.type);
 					};
 					$.getJSON("data/visa/" + from + ".visa.json", function( data ) {
-
 						overlayer(from,"self")
-						// var x = vectorSource.getFeatureById(from);
 						$.each(data.requirements, function( key, val ) {
 							overlayer(key,val.type)
 						})
 					})
 				},
-				// getStyle: function(reg){
-				// 	return new ol.style.Style({
-				// 		fill: new ol.style.Fill({
-				// 			color: (function() {
-				// 				return	{
-				// 						 "Asia": "rgba(255, 255, 0, 0.1)",
-				// 						 "Europe": "rgba(255, 0, 0, 0.1)",
-				// 						 "Africa": "rgba(255, 165, 0, 0.1)",
-				// 						 "Oceania": "rgba(0, 0, 255, 0.1)",
-				// 						 "Americas": "rgba(0, 255, 0, 0.1)"
-				// 						}[reg] || "rgba(0, 0, 0, 0.4)"
-				// 			})()
-				// 		})
-				// 	})
-				// },
 
 				/*@Adds features to the map@*/
 				Fill: function(){
@@ -164,6 +147,7 @@
 						return dataDraw.hscache[text];
 					}
 				}),
+
 				Highlight: new ol.FeatureOverlay({
 					map: map,
 					style: new ol.style.Style({
@@ -173,7 +157,7 @@
 						})
 				}),
 
-				info: function(pixel, a) {
+				Info: function(pixel, a) {
 
 					var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
 						return feature;
@@ -208,9 +192,11 @@
 									if (dataDraw.selected){
 										options.wiki.empty()
 										dataDraw.Select.removeFeature(dataDraw.selected);
+										options.loader.removeClass("loader");
 									}
 									if (feature){
 										dataDraw.Select.addFeature(feature);
+										options.loader.addClass("loader");
 										var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
 										var resolver = setInterval(function(){
 											if(cache.get(url)){
@@ -223,10 +209,13 @@
 													blurb.find('.mw-ext-cite-error').remove();
 													blurb.find('#coordinates').parent().parent().remove()
 													blurb.find('.nowrap').remove()
+
+													options.loader.removeClass("loader");
 													$(options.wiki).html($(blurb).find('p'));
 												}
 											}
 										}, 500);
+										
 									}
 									dataDraw.selected = feature;
 								}
@@ -252,11 +241,11 @@
 				
 				// dataDraw.Fill()
 				map.on('click', function(evt) {
-					dataDraw.info(evt.pixel,"select");
+					dataDraw.Info(evt.pixel,"select");
 				});
 
 				$(map.getViewport()).on('mousemove', function(evt) {
-					dataDraw.info(map.getEventPixel(evt.originalEvent),"highlight");
+					dataDraw.Info(map.getEventPixel(evt.originalEvent),"highlight");
 				});
 			})
 
