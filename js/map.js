@@ -11,14 +11,14 @@
                     if (localStorage.getItem(url) == null) {
 
                         $.ajax({
-                            url: url,
-                            dataType: 'json',
-                            async: false
-                        })
-                        .done(function(data) {
-                            localStorage[url] = JSON.stringify(data);
-                            return localStorage[url];
-                        })
+                                url: url,
+                                dataType: 'json',
+                                async: false
+                            })
+                            .done(function(data) {
+                                localStorage[url] = JSON.stringify(data);
+                                return localStorage[url];
+                            })
                     } else return localStorage[url];
                 }
             },
@@ -79,8 +79,8 @@
                         $.each(data.requirements, function(key, val) {
                             overlayer(key, val.type)
                         })
-                    }).fail(function(){
-                    	console.log("Fuu")
+                    }).fail(function() {
+                        console.log("Fuu")
                     })
                 },
 
@@ -241,7 +241,7 @@
                 clearInterval(resolver);
                 var data = JSON.parse(cache.get("data/countries.json"));
                 $.each(data, function(key, val) {
-                	options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
+                    options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
             }
@@ -256,15 +256,15 @@
             dataDraw.Info(map.getEventPixel(evt.originalEvent), "highlight");
         });
 
-        options.choser.change(function () {
-		    var str = "";
-		    $("option:selected", options.choser).each(function() {
-		      str += $( this ).attr("value");
-		    });
-		    dataDraw.Clear();
-		    dataDraw.Visa(str);
-		    // console.log( str );
-		})
+        options.choser.change(function() {
+            var str = "";
+            $("option:selected", options.choser).each(function() {
+                str += $(this).attr("value");
+            });
+            dataDraw.Clear();
+            dataDraw.Visa(str);
+            // console.log( str );
+        })
 
     };
 }(jQuery));
