@@ -91,6 +91,7 @@
                             var x = vectorSource.getFeatureById(val.cca2);
                             if (x != null) {
                                 x.set("info", val);
+                                x.set("type", "");
                                 map.addOverlay(
                                     new ol.FeatureOverlay({
                                         map: map,
@@ -181,7 +182,7 @@
                                 "d": "Visa refused.",
                                 "u": "Customs union.",
                                 "f": "Visa not required"
-                            }[t] || "Something else..."
+                            }[t] || ""
                         }
 
                         options.debug.html(feature ? "<h3>" + feature.getId() + ' : ' + feature.get('name') + ' : ' + visadec(feature.get('type')) + "</h3>" : '&nbsp;');
@@ -244,6 +245,7 @@
                     options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
+                dataDraw.Fill()
             }
         }, 300);
 
@@ -261,8 +263,15 @@
             $("option:selected", options.choser).each(function() {
                 str += $(this).attr("value");
             });
-            dataDraw.Clear();
-            dataDraw.Visa(str);
+            console.log(str)
+            if(str == "undefined"){
+            	dataDraw.Clear();
+            	dataDraw.Fill()
+            }else{
+            	dataDraw.Clear();
+            	dataDraw.Visa(str);
+            }
+           
             // console.log( str );
         })
 
