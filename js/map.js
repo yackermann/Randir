@@ -10,15 +10,15 @@
                 get: function(url) {
                     if (localStorage.getItem(url) == null) {
 
-                        $.when($.ajax({
+                        $.ajax({
                             url: url,
                             dataType: 'json',
                             async: false
-                        })).done(function(data) {
+                        })
+                        .done(function(data) {
                             localStorage[url] = JSON.stringify(data);
                             return localStorage[url];
-                        });
-
+                        })
                     } else return localStorage[url];
                 }
             },
@@ -79,6 +79,8 @@
                         $.each(data.requirements, function(key, val) {
                             overlayer(key, val.type)
                         })
+                    }).fail(function(){
+                    	console.log("Fuu")
                     })
                 },
 
@@ -177,7 +179,7 @@
                                 "a": "Visa on arrival.",
                                 "r": "Visa required.",
                                 "d": "Visa refused.",
-                                "u": "Visa not required, free border agreement.",
+                                "u": "Customs union.",
                                 "f": "Visa not required"
                             }[t] || "Something else..."
                         }
@@ -239,9 +241,9 @@
                 clearInterval(resolver);
                 var data = JSON.parse(cache.get("data/countries.json"));
                 $.each(data, function(key, val) {
+                	options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
-                dataDraw.Visa("RU");
             }
         }, 300);
 
@@ -253,6 +255,16 @@
         $(map.getViewport()).on('mousemove', function(evt) {
             dataDraw.Info(map.getEventPixel(evt.originalEvent), "highlight");
         });
+
+        options.choser.change(function () {
+		    var str = "";
+		    $("option:selected", options.choser).each(function() {
+		      str += $( this ).attr("value");
+		    });
+		    dataDraw.Clear();
+		    dataDraw.Visa(str);
+		    // console.log( str );
+		})
 
     };
 }(jQuery));

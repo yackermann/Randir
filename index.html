@@ -4,6 +4,7 @@
 <head>
     <title>Randir (Alpha)</title>
     <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link href='css/select2.css' rel='stylesheet' type='text/css'>
     <link rel="prefetch" href="img/ajax.png" />
     <style type="text/css">
         html,
@@ -110,7 +111,7 @@
 <body>
     <div id="osm" class="map"></div>
 
-    <div id="visainfo">
+    <div id="visainfo"> 
         <div id="feature_info"></div>
         <h3>Visa on arrival.<div style="width:20px;height:20px;background:rgba(255, 255, 0, 0.2);"></div></h3>
         <h3>Visa required.<div style="width:20px;height:20px;background:rgba(255, 0, 0, 0.2);"></div></h3>
@@ -127,8 +128,10 @@
     <div class="content">
         <div class="inclass">
             <!-- <h1>Hi everyone! I am from <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="selecter" tabindex="0" placeholder=""aria-activedescendant="select2-result-label-391">!</h1> -->
-            <h1>Showing visa situation for Russia. (Alpha)</h1>
-
+            <!-- <h1>Tell me whre you from:</h1> -->
+            <select id="selecter" placeholder="Where you from?" data-placeholder="Where you from?">
+            	<option></option>
+            </select>
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -148,12 +151,13 @@
                 },
                 wiki: $("#infobox > div.inner"),
                 debug: $("#feature_info"),
-                loader: $("#loader")
+                loader: $("#loader"),
+                choser: $("#selecter")
             });
+            $("#selecter").select2({
+				allowClear: true
+         	})
         });
-         // $("#selecter").select2({
-         // 	placeholder: "Select a State"
-         // });
     </script>
 </body>
 
