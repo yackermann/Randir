@@ -38,7 +38,17 @@
   				outline: 2px dashed #000; 
   				border-bottom: none;
   			}
-
+  			#selecter{
+  				font-family: 'Hammersmith One', sans-serif;
+  				/*font-size: 2em;*/
+  				background: none;
+  				border-bottom: 2px dashed #000;
+  			}
+  			#selecter:hover{
+  				/*font-size: 2em;*/
+  				outline: 2px dashed #000; 
+  				border-bottom: none;
+  			}
 			#infobox {
 				overflow-y: auto;
 				position: absolute;
@@ -109,7 +119,7 @@
 		</div>
 		<div class="content">
 			<div class="inclass">
-				<!-- <h1>Hi everyone! I am from <span contenteditable="true">Russia</span>!</h1> -->
+				<!-- <h1>Hi everyone! I am from <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="selecter" tabindex="0" placeholder=""aria-activedescendant="select2-result-label-391">!</h1> -->
 				<h1>Showing visa situation for Russia. (Aplha)</h1>
 
 			</div>
@@ -118,8 +128,10 @@
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 		<script src="js/ol.js" type="text/javascript"></script>
 		<!--<script src="//ol3js.org/en/master/build/ol.js" type="text/javascript"></script>-->
+		<script type="text/javascript" src="js/select2.min.js"></script>
 		<script type="text/javascript" src="js/map.js"></script>
 		<script type="text/javascript">
+		$(window).load(function() {
 			$("#osm").cigto({
 				data: {
 					info: 'data/countries.json',
@@ -128,7 +140,11 @@
 				wiki: $("#infobox > div.inner"),
 				debug: $("#feature_info"),
 				loader: $("#loader")
-			})
+			});
+		});
+			// $("#selecter").select2({
+			// 	placeholder: "Select a State"
+			// });
 		</script>
 	</body>
 </html>

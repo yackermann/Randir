@@ -224,32 +224,26 @@
 				}
 
 			}
-			$(window).load(function() {
-				
-				var resolver = setInterval(function(){
-					if(cache.get("data/countries.json")){
-						clearInterval(resolver);
-						var data = JSON.parse(cache.get("data/countries.json"));
-						$.each(data,function(key, val){
-							struct[val.cca2] = val
-						})
-						dataDraw.Visa("RU");
-					}	
+	
+			var resolver = setInterval(function(){
+				if(cache.get("data/countries.json")){
+					clearInterval(resolver);
+					var data = JSON.parse(cache.get("data/countries.json"));
+					$.each(data,function(key, val){
+						struct[val.cca2] = val
+					})
+					dataDraw.Visa("RU");
+				}	
+			}, 300);
+			
+			// dataDraw.Fill()
+			map.on('click', function(evt) {
+				dataDraw.Info(evt.pixel,"select");
+			});
 
-				}, 300);
-				
-				
-				// dataDraw.Fill()
-				map.on('click', function(evt) {
-					dataDraw.Info(evt.pixel,"select");
-				});
-
-				$(map.getViewport()).on('mousemove', function(evt) {
-					dataDraw.Info(map.getEventPixel(evt.originalEvent),"highlight");
-				});
-			})
-
-
-
+			$(map.getViewport()).on('mousemove', function(evt) {
+				dataDraw.Info(map.getEventPixel(evt.originalEvent),"highlight");
+			});
+			
 	};
 }( jQuery ));
