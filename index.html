@@ -1,151 +1,160 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Randir (Alpha)</title>
-		<link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
-		<link rel="prefetch" href="img/ajax.png" />
-		<style type="text/css">
-			html, body, .map {
-				overflow:hidden;
-				font-family: 'Hammersmith One', sans-serif;
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-			}
 
-			.content {
-				position: fixed;
-				width: 50%;
-				margin-left: 50%;
-				margin-top: 1%;
+<head>
+    <title>Randir (Alpha)</title>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link rel="prefetch" href="img/ajax.png" />
+    <style type="text/css">
+        html,
+        body,
+        .map {
+            overflow: hidden;
+            font-family: 'Hammersmith One', sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content {
+            position: fixed;
+            width: 50%;
+            margin-left: 50%;
+            margin-top: 1%;
+            top: 0;
+            left: 0;
+        }
+        .inclass > * {
+            margin-left: -50%;
+            width: 100%;
+            text-align: center;
+        }
+        [contenteditable="true"] {
+            border-bottom: 2px dashed #000;
+        }
+        [contenteditable="true"]:hover {
+            outline: 2px dashed #000;
+            border-bottom: none;
+        }
+        #selecter {
+            font-family: 'Hammersmith One', sans-serif;
+            /*font-size: 2em;*/
+            background: none;
+            border-bottom: 2px dashed #000;
+        }
+        #selecter:hover {
+            /*font-size: 2em;*/
+            outline: 2px dashed #000;
+            border-bottom: none;
+        }
+        #infobox {
+            overflow-y: auto;
+            position: absolute;
+            font-size: 0.7em;
+            top: 10px;
+            left: 10px;
+            width: 25%;
+        }
+        #visainfo {
+            position: absolute;
+            font-size: 0.7em;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 4px;
+        }
+        .inner {
+            background-color: white;
+            padding: 10px;
+        }
+        .inner:empty {
+            display: none;
+        }
+        @-webkit-keyframes loaderSprite {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -2500px;
+            }
+        }
+        @-moz-keyframes loaderSprite {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -2500px;
+            }
+        }
+        @keyframes loaderSprite {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -2500px;
+            }
+        }
+        .loader {
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            background-image: url("img/ajax.png");
+            -webkit-animation: loaderSprite 1s steps(25, end) infinite;
+            -moz-animation: loaderSprite 1s steps(25, end) infinite;
+            animation: loaderSprite 1s steps(25, end) infinite;
+        }
+    </style>
+</head>
 
-				top: 0;
-   				left: 0;
-			}
+<body>
+    <div id="osm" class="map"></div>
 
-			.inclass > * {
-				
-				margin-left: -50%;
-				width: 100%;
-				text-align: center;
-			}
+    <div id="visainfo">
+        <div id="feature_info"></div>
+        <h3>Visa on arrival.<div style="width:20px;height:20px;background:rgba(255, 255, 0, 0.2);"></div></h3>
+        <h3>Visa required.<div style="width:20px;height:20px;background:rgba(255, 0, 0, 0.2);"></div></h3>
+        <h3>Visa refused.<div style="width:20px;height:20px;background:rgba(0, 0, 0, 0.5);"></div></h3>
+        <h3>Free border agreement. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.2);"></div></h3>
+        <h3>Visa not required. <div style="width:20px;height:20px;background:rgba(0, 255, 0, 0.2);"></div></h3>
+        <h3>Self. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.4);"></div></h3>
+    </div>
 
+    <div id="infobox">
+        <div id="loader"></div>
+        <div class="inner"></div>
+    </div>
+    <div class="content">
+        <div class="inclass">
+            <!-- <h1>Hi everyone! I am from <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="selecter" tabindex="0" placeholder=""aria-activedescendant="select2-result-label-391">!</h1> -->
+            <h1>Showing visa situation for Russia. (Alpha)</h1>
 
-			[contenteditable="true"] { 
-				border-bottom: 2px dashed #000;
-			}
-  			[contenteditable="true"]:hover { 
-  				outline: 2px dashed #000; 
-  				border-bottom: none;
-  			}
-  			#selecter{
-  				font-family: 'Hammersmith One', sans-serif;
-  				/*font-size: 2em;*/
-  				background: none;
-  				border-bottom: 2px dashed #000;
-  			}
-  			#selecter:hover{
-  				/*font-size: 2em;*/
-  				outline: 2px dashed #000; 
-  				border-bottom: none;
-  			}
-			#infobox {
-				overflow-y: auto;
-				position: absolute;
-				font-size: 0.7em;
-				top: 10px;
-				left: 10px;
-				width: 25%;
-			}
-			#visainfo{
-				position: absolute;
-				font-size: 0.7em;
-				top: 10px;
-				right: 10px;
-				background-color: white;
-				padding: 4px;
-			}
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')
+    </script>
+    <script src="js/ol.js" type="text/javascript"></script>
+    <!--<script src="//ol3js.org/en/master/build/ol.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $("#osm").cigto({
+                data: {
+                    info: 'data/countries.json',
+                    geo: 'data/world.geo.json'
+                },
+                wiki: $("#infobox > div.inner"),
+                debug: $("#feature_info"),
+                loader: $("#loader")
+            });
+        });
+         // $("#selecter").select2({
+         // 	placeholder: "Select a State"
+         // });
+    </script>
+</body>
 
-			.inner {
-				background-color: white;
-				padding: 10px;
-			}
-			.inner:empty{
-				display:none;
-			}
-
-			@-webkit-keyframes loaderSprite {
-				from { background-position: 0px; }
-				to { background-position: -2500px; }
-			}
-
-			@-moz-keyframes loaderSprite {
-				from { background-position: 0px; }
-				to { background-position: -2500px; }
-			}
-
-			@keyframes loaderSprite {
-				from { background-position: 0px; }
-				to { background-position: -2500px; }
-			}
-			.loader {
-				top: 10px;
-				left: 10px;
-				width: 100px;
-				height: 100px;
-				background-image: url("img/ajax.png");
-				-webkit-animation: loaderSprite 1s steps(25, end) infinite;
-				-moz-animation: loaderSprite 1s steps(25, end) infinite;
-				animation: loaderSprite 1s steps(25, end) infinite;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="osm" class="map"></div>
-		
-		<div id="visainfo">
-			<div id="feature_info"></div>
-				 	<h3>Visa on arrival.<div style="width:20px;height:20px;background:rgba(255, 255, 0, 0.2);"></div></h3>
-				 	<h3>Visa required.<div style="width:20px;height:20px;background:rgba(255, 0, 0, 0.2);"></div></h3>
-				 	<h3>Visa refused.<div style="width:20px;height:20px;background:rgba(0, 0, 0, 0.5);"></div></h3>
-				 	<h3>Free border agreement. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.2);"></div></h3>
-				 	<h3>Visa not required. <div style="width:20px;height:20px;background:rgba(0, 255, 0, 0.2);"></div></h3>
-				 	<h3>Self. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.4);"></div></h3>
-		</div>
-
-		<div id="infobox">
-			<div id="loader"></div>
-			<div class="inner"></div>
-		</div>
-		<div class="content">
-			<div class="inclass">
-				<!-- <h1>Hi everyone! I am from <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="selecter" tabindex="0" placeholder=""aria-activedescendant="select2-result-label-391">!</h1> -->
-				<h1>Showing visa situation for Russia. (Alpha)</h1>
-
-			</div>
-		</div>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-		<script src="js/ol.js" type="text/javascript"></script>
-		<!--<script src="//ol3js.org/en/master/build/ol.js" type="text/javascript"></script>-->
-		<script type="text/javascript" src="js/select2.min.js"></script>
-		<script type="text/javascript" src="js/map.js"></script>
-		<script type="text/javascript">
-		$(window).load(function() {
-			$("#osm").cigto({
-				data: {
-					info: 'data/countries.json',
-					geo: 'data/world.geo.json'
-				},
-				wiki: $("#infobox > div.inner"),
-				debug: $("#feature_info"),
-				loader: $("#loader")
-			});
-		});
-			// $("#selecter").select2({
-			// 	placeholder: "Select a State"
-			// });
-		</script>
-	</body>
 </html>
