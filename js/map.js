@@ -28,8 +28,14 @@
                 ]),
                 layers: [
                     new ol.layer.Tile({
-                        source: new ol.source.OSM()
-                    }),
+                        source: new ol.source.BingMaps({
+                          key: 'ArsgdK7CnP8NYclbhmgF2dCv2hBdIIXlaJJ5ImlxzXsQmSxfB_nHSomedphqRl6f',
+                          imagerySet: 'AerialWithLabels'
+                        })
+                    })
+                    // new ol.layer.Tile({
+                    //     source: new ol.source.OSM()
+                    // })
                 ],
                 target: this.attr("id"),
                 view: new ol.View({
@@ -56,15 +62,19 @@
                                 new ol.FeatureOverlay({
                                     map: map,
                                     style: new ol.style.Style({
+                                    	stroke: new ol.style.Stroke({
+		                                    color: '#fff',
+		                                    width: 0.5
+		                                }),
                                         fill: new ol.style.Fill({
                                             color: (function() {
                                                 return {
-                                                    "a": "rgba(255, 255, 0, 0.1)",
-                                                    "r": "rgba(255, 0, 0, 0.1)",
+                                                    "a": "rgba(255, 255, 0, 0.2)",
+                                                    "r": "rgba(255, 0, 0, 0.2)",
                                                     "d": "rgba(0, 0, 0, 0.4)",
-                                                    "u": "rgba(0, 0, 255, 0.1)",
-                                                    "f": "rgba(0, 255, 0, 0.1)",
-                                                    "self": "rgba(0, 0, 255, 0.2)",
+                                                    "u": "rgba(0, 0, 255, 0.2)",
+                                                    "f": "rgba(0, 255, 0, 0.2)",
+                                                    "self": "rgba(0, 0, 255, 0.4)",
                                                 }[v] || "rgba(255, 165, 0, 0.1)"
                                             })()
                                         })
@@ -80,7 +90,7 @@
                             overlayer(key, val.type)
                         })
                     }).fail(function() {
-                        console.log("Fuu")
+                        console.log("Блеять! 404 епта!")
                     })
                 },
 
@@ -96,14 +106,18 @@
                                     new ol.FeatureOverlay({
                                         map: map,
                                         style: new ol.style.Style({
+                                        	stroke: new ol.style.Stroke({
+			                                    color: '#fff',
+			                                    width: 0.5
+		                                	}),
                                             fill: new ol.style.Fill({
                                                 color: (function() {
                                                     return {
-                                                        "Asia": "rgba(255, 255, 0, 0.1)",
-                                                        "Europe": "rgba(255, 0, 0, 0.1)",
-                                                        "Africa": "rgba(255, 165, 0, 0.1)",
-                                                        "Oceania": "rgba(0, 0, 255, 0.1)",
-                                                        "Americas": "rgba(0, 255, 0, 0.1)"
+                                                        "Asia": "rgba(255, 255, 0, 0.2)",
+                                                        "Europe": "rgba(255, 0, 0, 0.2)",
+                                                        "Africa": "rgba(255, 165, 0, 0.2)",
+                                                        "Oceania": "rgba(0, 0, 255, 0.2)",
+                                                        "Americas": "rgba(0, 255, 0, 0.2)"
                                                     }[val.region] || "rgba(0, 0, 0, 0.4)"
                                                 })()
                                             })
@@ -136,7 +150,7 @@
                             dataDraw.hscache[text] = [new ol.style.Style({
                                 stroke: new ol.style.Stroke({
                                     color: '#f00',
-                                    width: 1
+                                    width: 2
                                 }),
                                 fill: new ol.style.Fill({
                                     color: 'rgba(255,0,0,0.1)'
