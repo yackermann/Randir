@@ -289,7 +289,18 @@
             str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
         });
         options.refresh.click(function(){
-            confirm('Are you sure you want to refresh you cache?') ? (function(){localStorage.clear(); location.reload();})() : ''
+            confirm('Are you sure you want to refresh you cache?') ? (function(){
+                localStorage.clear(); 
+                var resolver = setInterval(function() {
+                    if (cache.get("data/countries.json")) {
+                        clearInterval(resolver);
+                        var data = JSON.parse(cache.get("data/countries.json"));
+                        $.each(data, function(key, val) {
+                            options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
+                            struct[val.cca2] = val
+                        })
+                        dataDraw.Fill()
+                    }
+                }, 300)})() : ''
         })
     };
-}(jQuery));
