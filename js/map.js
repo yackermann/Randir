@@ -237,7 +237,8 @@
                                                 blurb.find('.nowrap').remove()
 
                                                 options.loader.removeClass("loader");
-                                                $(options.wiki).html($(blurb).find('p'));
+                                                $(options.wiki).append($(blurb).find('p'));
+                                                $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get("info").name + '>Wikipedia</a></p>').scrollTop(0);
                                             }
                                         }
                                     }, 500);
