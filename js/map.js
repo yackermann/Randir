@@ -61,6 +61,7 @@
             dataDraw = {
                 /*@Adds features to the map@*/
                 Visa: function(from) {
+                    dataDraw.Clear();
                     var overlayer = function(k, v) {
                         var x = vectorSource.getFeatureById(k);
                         if (x != null) {
@@ -104,6 +105,7 @@
 
                 /*@Adds features to the map@*/
                 Fill: function() {
+                    dataDraw.Clear();
                     $.getJSON(options.data.info, function(data) {
                         $.each(data, function(key, val) {
                             var x = vectorSource.getFeatureById(val.cca2);
@@ -284,13 +286,7 @@
                 str += $(this).attr("value");
             });
             console.log(str)
-            if(str == "undefined"){
-            	dataDraw.Clear();
-            	dataDraw.Fill()
-            }else{
-            	dataDraw.Clear();
-            	dataDraw.Visa(str);
-            }
+            str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
            
             // console.log( str );
         })
