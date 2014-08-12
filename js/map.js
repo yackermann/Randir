@@ -30,7 +30,7 @@
                     new ol.layer.Tile({
                         source: new ol.source.BingMaps({
                           key: 'ArsgdK7CnP8NYclbhmgF2dCv2hBdIIXlaJJ5ImlxzXsQmSxfB_nHSomedphqRl6f',
-                          imagerySet: 'AerialWithLabels'
+                          imagerySet: 'Aerial'
                         })
                     })
                     // new ol.layer.Tile({
@@ -187,20 +187,24 @@
                         return feature;
                     });
 
-                    if (options.debug != undefined) {
-                        var visadec = function(t) {
-                            return {
-                                "self": feature.get('name'),
-                                "a": "Visa on arrival.",
-                                "r": "Visa required.",
-                                "d": "Visa refused.",
-                                "u": "Customs union.",
-                                "f": "Visa not required"
-                            }[t] || ""
-                        }
-
-                        options.debug.html(feature ? "<h3>" + feature.getId() + ' : ' + feature.get('name') + ' : ' + visadec(feature.get('type')) + "</h3>" : '&nbsp;');
+                    var visadec = function(t) {
+                        return {
+                            "self": feature.get('name'),
+                            "a": "Visa on arrival.",
+                            "r": "Visa required.",
+                            "d": "Visa refused.",
+                            "u": "Customs union.",
+                            "f": "Visa not required"
+                        }[t] || ""
                     }
+                    if(feature){
+                        if(feature.get('type') && feature){
+                            options.info.html('<h3>' + feature.get('name') + '<span class="circle ' + feature.get('type') + '"></span> ' + visadec(feature.get('type')) + '</h3>')
+                        }else{
+                            options.info.html('<h3>' + feature.get('name') + '</h3>');
+                        }
+                        
+                    }else{options.info.html('');}
 
                     var action = {
                         "highlight": function() {

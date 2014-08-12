@@ -18,37 +18,15 @@
              <select id="selecter" placeholder="Where you from?" data-placeholder="Where you from?" style="width:100%;text-align:center;">
                 <option></option>
             </select>
-
-            <div class="info">HELLO</div>
-
-            <div class="info wiki"></div>
+            <div class="infobox wiki"></div>
+            
+            <div class="infobox featureinfo"></div>
         </div>
         <!-- <div id="loader"></div> -->
         <!-- <div class="inner"></div> -->
     </div>
-
-   <!--  <div id="visainfo">
-        <div id="feature_info"></div>
-        <h3>Visa on arrival.<div style="width:20px;height:20px;background:rgba(255, 255, 0, 0.2);"></div></h3>
-        <h3>Visa required.<div style="width:20px;height:20px;background:rgba(255, 0, 0, 0.2);"></div></h3>
-        <h3>Visa refused.<div style="width:20px;height:20px;background:rgba(0, 0, 0, 0.5);"></div></h3>
-        <h3>Free border agreement. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.2);"></div></h3>
-        <h3>Visa not required. <div style="width:20px;height:20px;background:rgba(0, 255, 0, 0.2);"></div></h3>
-        <h3>Self. <div style="width:20px;height:20px;background:rgba(0, 0, 255, 0.4);"></div></h3>
-    </div>
- -->
-   
-    <!-- <div class="content"> -->
-        <!-- <div class="inclass"> -->
-            <!-- <h1>Hi everyone! I am from <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="selecter" tabindex="0" placeholder=""aria-activedescendant="select2-result-label-391">!</h1> -->
-            <!-- <h1>Tell me whre you from:</h1> -->
-           
-        <!-- </div> -->
-    <!-- </div> -->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-    <script>
-        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/ol.js" type="text/javascript"></script>
     <!--<script src="//ol3js.org/en/master/build/ol.js" type="text/javascript"></script>-->
     <script type="text/javascript" src="js/select2.min.js"></script>
@@ -61,7 +39,7 @@
                     geo: 'data/world.geo.json'
                 },
                 wiki: $("div.wiki"),
-                debug: $("#feature_info"),
+                info: $("div.featureinfo"),
                 loader: $("#loader"),
                 choser: $("#selecter")
             });
