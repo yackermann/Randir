@@ -217,7 +217,9 @@
                         "select": function() {
                             if (feature !== dataDraw.selected) {
                                 if (dataDraw.selected) {
-                                    options.wiki.empty()
+                                    options.wiki.animate({
+                                        height:0,
+                                    },400).promise().done(function(){options.wiki.empty()})
                                     dataDraw.Select.removeFeature(dataDraw.selected);
                                     options.loader.hide();
                                 }
@@ -240,6 +242,9 @@
                                                 blurb.find('.nowrap').remove()
 
                                                 options.loader.hide();
+                                                options.wiki.animate({
+                                                    height:400,
+                                                },400)
                                                 $(options.wiki).append($(blurb).find('p'));
                                                 $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get("info").name + '>Wikipedia</a></p>').scrollTop(0);
                                             }
@@ -272,6 +277,11 @@
         }, 300);
 
         // dataDraw.Fill()
+        // $(document).keyup(function(e) {
+        //     if (e.keyCode == 27) {
+        //         alert("esc")
+        //     }
+        // })
         map.on('click', function(evt) {
             dataDraw.Info(evt.pixel, "select");
         });
