@@ -71,10 +71,10 @@
                                 new ol.FeatureOverlay({
                                     map: map,
                                     style: new ol.style.Style({
-                                    	stroke: new ol.style.Stroke({
-		                                    color: '#fff',
-		                                    width: 0.5
-		                                }),
+                                        stroke: new ol.style.Stroke({
+                                            color: '#fff',
+                                            width: 0.5
+                                        }),
                                         fill: new ol.style.Fill({
                                             color: (function() {
                                                 return {
@@ -116,10 +116,10 @@
                                     new ol.FeatureOverlay({
                                         map: map,
                                         style: new ol.style.Style({
-                                        	stroke: new ol.style.Stroke({
-			                                    color: '#fff',
-			                                    width: 0.5
-		                                	}),
+                                            stroke: new ol.style.Stroke({
+                                                color: '#fff',
+                                                width: 0.5
+                                            }),
                                             fill: new ol.style.Fill({
                                                 color: (function() {
                                                     return {
@@ -289,18 +289,14 @@
             str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
         });
         options.refresh.click(function(){
-            confirm('Are you sure you want to refresh you cache?') ? (function(){
-                localStorage.clear(); 
+            confirm('Are you sure you want to refresh you cache?') ? (function() {
+                localStorage.clear();
                 var resolver = setInterval(function() {
                     if (cache.get("data/countries.json")) {
                         clearInterval(resolver);
-                        var data = JSON.parse(cache.get("data/countries.json"));
-                        $.each(data, function(key, val) {
-                            options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
-                            struct[val.cca2] = val
-                        })
-                        dataDraw.Fill()
                     }
-                }, 300)})() : ''
+                }, 300)
+            })() : ''
         })
     };
+}(jQuery));
