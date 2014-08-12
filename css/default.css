@@ -42,9 +42,13 @@ body,
 .circle.a{color: yellow;}
 .circle.r{color: red;}
 .circle.d{color: black;}
-.circle.s{color: darkblue;}
+.circle.self{color: darkblue;}
 
-
+.loader .loadico{
+    background:url('select2-spinner.gif');
+    height: 15px;
+    background-repeat:no-repeat;
+}
 
 .infobox {
     margin-top:10px;
@@ -59,39 +63,4 @@ body,
 }
 .infobox:empty {
     display: none;
-}
-
-@-webkit-keyframes loaderSprite {
-    from {
-        background-position: 0px;
-    }
-    to {
-        background-position: -2500px;
-    }
-}
-@-moz-keyframes loaderSprite {
-    from {
-        background-position: 0px;
-    }
-    to {
-        background-position: -2500px;
-    }
-}
-@keyframes loaderSprite {
-    from {
-        background-position: 0px;
-    }
-    to {
-        background-position: -2500px;
-    }
-}
-.loader {
-    top: 10px;
-    left: 10px;
-    width: 100px;
-    height: 100px;
-    background-image: url("../img/ajax.png");
-    -webkit-animation: loaderSprite 1s steps(25, end) infinite;
-    -moz-animation: loaderSprite 1s steps(25, end) infinite;
-    animation: loaderSprite 1s steps(25, end) infinite;
 }

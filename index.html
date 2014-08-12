@@ -6,7 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
     <link href='css/select2.css' rel='stylesheet' type='text/css'>
     <link href='css/default.css' rel='stylesheet' type='text/css'>
-    <link rel="prefetch" href="img/ajax.png" />
+    <!-- <link rel="prefetch" href="img/ajax.png" /> -->
 </head>
 
 <body>
@@ -19,11 +19,10 @@
                 <option></option>
             </select>
             <div class="infobox wiki"></div>
-            
+            <div class="infobox loader" style="display:none;"><div class="loadico"></div></div>
             <div class="infobox featureinfo"></div>
         </div>
         <!-- <div id="loader"></div> -->
-        <!-- <div class="inner"></div> -->
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -40,7 +39,7 @@
                 },
                 wiki: $("div.wiki"),
                 info: $("div.featureinfo"),
-                loader: $("#loader"),
+                loader: $(".loader"),
                 choser: $("#selecter")
             });
             $("#selecter").select2({

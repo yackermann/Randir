@@ -19,6 +19,9 @@
                                 localStorage[url] = JSON.stringify(data);
                                 return localStorage[url];
                             })
+                            .fail(function() {
+                                return "@error@"
+                            })
                     } else return localStorage[url];
                 }
             },
@@ -30,9 +33,14 @@
                     new ol.layer.Tile({
                         source: new ol.source.BingMaps({
                           key: 'ArsgdK7CnP8NYclbhmgF2dCv2hBdIIXlaJJ5ImlxzXsQmSxfB_nHSomedphqRl6f',
-                          imagerySet: 'Aerial'
+                          imagerySet: 'AerialWithLabels'
                         })
                     })
+                    // new ol.layer.Tile({
+                    //     source: new ol.source.TileJSON({
+                    //         url: '//api.tiles.mapbox.com/v3/mapbox.world-dark.jsonp'
+                    //     })
+                    // })
                     // new ol.layer.Tile({
                     //     source: new ol.source.OSM()
                     // })
@@ -155,17 +163,6 @@
                                 fill: new ol.style.Fill({
                                     color: 'rgba(255,0,0,0.1)'
                                 }),
-                                text: new ol.style.Text({
-                                    font: '12px Calibri,sans-serif',
-                                    text: text,
-                                    fill: new ol.style.Fill({
-                                        color: '#000'
-                                    }),
-                                    stroke: new ol.style.Stroke({
-                                        color: '#f00',
-                                        width: 3
-                                    })
-                                })
                             })];
                         }
                         return dataDraw.hscache[text];
@@ -220,14 +217,14 @@
                                 if (dataDraw.selected) {
                                     options.wiki.empty()
                                     dataDraw.Select.removeFeature(dataDraw.selected);
-                                    options.loader.removeClass("loader");
+                                    options.loader.hide();
                                 }
                                 if (feature) {
                                     dataDraw.Select.addFeature(feature);
-                                    options.loader.addClass("loader");
+                                    options.loader.show();
                                     var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
                                     var resolver = setInterval(function() {
-                                        if (cache.get(url)) {
+                                        if (cache.get(url) && cache.get(url) !== "@error@") {
                                             if (feature == dataDraw.selected) {
                                                 clearInterval(resolver)
                                                 var datap = JSON.parse(cache.get(url))
@@ -240,10 +237,14 @@
                                                 blurb.find('#coordinates').parent().parent().remove()
                                                 blurb.find('.nowrap').remove()
 
-                                                options.loader.removeClass("loader");
+                                                options.loader.hide();
                                                 $(options.wiki).append($(blurb).find('p'));
                                                 $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get("info").name + '>Wikipedia</a></p>').scrollTop(0);
                                             }
+                                        }else if(cache.get(url) == "@error@"){
+                                                clearInterval(resolver);
+                                                options.loader.hide();
+                                                $(options.wiki).append("<p>Error while loading data.</p>");
                                         }
                                     }, 500);
 
