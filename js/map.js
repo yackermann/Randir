@@ -287,9 +287,9 @@
             });
             console.log(str)
             str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
-           
-            // console.log( str );
+        });
+        options.refresh.click(function(){
+            confirm('Are you sure you want to refresh you cache?') ? (function(){localStorage.clear(); location.reload();})() : ''
         })
-
     };
 }(jQuery));

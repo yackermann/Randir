@@ -21,7 +21,11 @@
             <div class="infobox featureinfo"></div>
         </div>
     </div>
-
+    <div class="nav">
+        <a href="#" class="refresher" title="Refresh cache"><img width="24px" src="css/icons/refresh.png"></a>
+        <a href="https://github.com/herrniemand/Randir/blob/gh-pages/README.md" title="About"><img width="24px" src="css/icons/help.png"></a>
+        <a href="https://github.com/herrniemand/Randir" title="Fork Me!"><img width="24px" src="css/icons/fork-repo.png"></a>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
@@ -40,7 +44,8 @@
                 wiki: $("div.wiki"),
                 info: $("div.featureinfo"),
                 loader: $(".loader"),
-                choser: $("#selecter")
+                choser: $("#selecter"),
+                refresh: $(".refresher")
             });
             $("#selecter").select2({
                 allowClear: true
