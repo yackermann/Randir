@@ -19,11 +19,27 @@ body,
 
 .container {
     overflow-y: auto;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
 
+.msg{
+    margin-bottom: 15px;
+    margin-right: 15px;
+    position: fixed;
+    bottom: -200;
+    right: 0;
+
+}
+.i:before{
+    content: '\2713';
+    color: green;
+}
+.a:before{
+    content: '\2716';
+    color: red;
+}
 .wiki {
     height: 0px;
     padding-top: 0 !important;
@@ -36,7 +52,7 @@ body,
     text-align: center;
 }
 
-.circle:before {content: ' \25CF'; font-size: 1.5em;}
+.circle:before {content: '\25CF'; font-size: 1.5em;}
 .circle.u{color: lightblue;}
 .circle.f{color: green;}
 .circle.a{color: yellow;}
@@ -63,6 +79,7 @@ body,
 .infobox:empty {
     display: none;
 }
+
 
 .nav {
     position: absolute;

@@ -6,6 +6,10 @@
                 zoom: 2,
                 center: [0, 0]
             }, params),
+            message = function(msg, status){
+                $(".msg").html('<span class="' + status + '"></span> ' + msg);
+                $(".msg").animate({bottom:0},500).delay(3000).animate({bottom:-200},500);
+            },
             cache = {
                 get: function(url) {
                     if (localStorage.getItem(url) == null) {
@@ -99,6 +103,7 @@
                             overlayer(key, val.type)
                         })
                     }).fail(function() {
+                        message("Sorry, visa information for "+ vectorSource.getFeatureById(from).get('name') + " is not available yet.", "a")
                         console.log("Блеять! 404 епта!")
                     })
                 },
@@ -304,6 +309,7 @@
                 var resolver = setInterval(function() {
                     if (cache.get("data/countries.json")) {
                         clearInterval(resolver);
+                        message("Cache have been successfully refreshed.","i")
                     }
                 }, 300)
             })() : ''
