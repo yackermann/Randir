@@ -278,7 +278,7 @@
                     options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
-                dataDraw.Fill()
+                // dataDraw.Fill()
             }
         }, 300);
 
@@ -302,7 +302,7 @@
                 str += $(this).attr("value");
             });
             // console.log(str)
-            str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
+            str == "undefined" ? dataDraw.Clear() : dataDraw.Visa(str);
         });
         options.refresh.click(function(){
             confirm('Are you sure you want to refresh you cache?') ? (function() {
