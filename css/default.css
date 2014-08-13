@@ -32,11 +32,11 @@ body,
     right: 0;
 
 }
-.i:before{
+.notification .i:before{
     content: '\2713';
     color: green;
 }
-.a:before{
+.notification .a:before{
     content: '\2716';
     color: red;
 }

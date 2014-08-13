@@ -7,8 +7,8 @@
                 center: [0, 0]
             }, params),
             message = function(msg, status){
-                $(".msg").html('<span class="' + status + '"></span> ' + msg);
-                $(".msg").animate({bottom:0},500).delay(3000).animate({bottom:-200},500);
+                options.notify.html('<span class="' + status + '"></span> ' + msg);
+                options.notify.animate({bottom:0},500).delay(3000).animate({bottom:-200},500);
             },
             cache = {
                 get: function(url) {
@@ -203,7 +203,8 @@
                     }
                     if(feature){
                         if(feature.get('type') && feature){
-                            options.info.html('<h3>' + feature.get('name') + '<span class="circle ' + feature.get('type') + '"></span> ' + visadec(feature.get('type')) + '</h3>')
+                            options.info.html('<h3>' + feature.get('name') + ' <span class="circle ' + feature.get('type') + '"></span> ' + visadec(feature.get('type')) + '</h3>')
+                            // console.log(options.info.html())
                         }else{
                             options.info.html('<h3>' + feature.get('name') + '</h3>');
                         }
@@ -300,7 +301,7 @@
             $("option:selected", options.choser).each(function() {
                 str += $(this).attr("value");
             });
-            console.log(str)
+            // console.log(str)
             str == "undefined" ? dataDraw.Fill() : dataDraw.Visa(str);
         });
         options.refresh.click(function(){
