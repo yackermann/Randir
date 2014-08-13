@@ -24,7 +24,7 @@ body,
     left: 0;
 }
 
-.msg{
+.notification{
     margin-bottom: 15px;
     margin-right: 15px;
     position: fixed;
