@@ -87,6 +87,8 @@
                                                     "d": "rgba(0, 0, 0, 0.4)",
                                                     "u": "rgba(0, 0, 255, 0.2)",
                                                     "f": "rgba(0, 255, 0, 0.2)",
+                                                    "o": "rgba(204, 255, 255, 0.4)",
+                                                    "esta":"rgba(152,251,152, 0.4)",
                                                     "self": "rgba(0, 0, 255, 0.4)",
                                                 }[v] || "rgba(255, 165, 0, 0.1)"
                                             })()
@@ -95,7 +97,7 @@
                                     features: [x]
                                 })
                             );
-                        } else console.log(val.type);
+                        } else console.log(k);
                     };
                     $.getJSON("data/visa/" + from + ".visa.json", function(data) {
                         overlayer(from, "self")
@@ -198,6 +200,8 @@
                             "r": "Visa required.",
                             "d": "Visa refused.",
                             "u": "Customs union.",
+                            "o": "Visa gained online",
+                            "esta": "Electronic System for Travel Authorization"
                             "f": "Visa not required"
                         }[t] || ""
                     }
