@@ -5,12 +5,22 @@
     "name": "Gambia",
     "rank": 107,
     "requirements": {
+        "AB": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "AD": {
             "note": "Apply regulation of France or Spain.",
             "time": "",
             "type": "r"
         },
         "AE": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AF": {
             "note": "",
             "time": "",
             "type": "r"
@@ -40,6 +50,11 @@
             "time": "",
             "type": "r"
         },
+        "AQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "AR": {
             "note": "",
             "time": "",
@@ -61,6 +76,11 @@
             "type": "r"
         },
         "AW": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AX": {
             "note": "",
             "time": "",
             "type": "r"
@@ -91,9 +111,9 @@
             "type": "r"
         },
         "BF": {
-            "note": "",
-            "time": "90 Day(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "BG": {
             "note": "Except for transit.",
@@ -111,9 +131,14 @@
             "type": "r"
         },
         "BJ": {
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
+        },
+        "BL": {
             "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
         },
         "BM": {
             "note": "",
@@ -130,6 +155,11 @@
             "time": "",
             "type": "r"
         },
+        "BQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BR": {
             "note": "",
             "time": "",
@@ -141,6 +171,11 @@
             "type": "f"
         },
         "BT": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "BV": {
             "note": "",
             "time": "",
             "type": "r"
@@ -161,6 +196,11 @@
             "type": "f"
         },
         "CA": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "CC": {
             "note": "",
             "time": "",
             "type": "r"
@@ -186,9 +226,9 @@
             "type": "r"
         },
         "CI": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "CK": {
             "note": "",
@@ -226,11 +266,16 @@
             "type": "r"
         },
         "CV": {
-            "note": "",
+            "note": "Economic Community of West African States",
             "time": "",
-            "type": "f"
+            "type": "u"
         },
         "CW": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "CX": {
             "note": "",
             "time": "",
             "type": "r"
@@ -290,6 +335,11 @@
             "time": "15 Day(s)",
             "type": "a"
         },
+        "EH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "ER": {
             "note": "",
             "time": "",
@@ -315,10 +365,20 @@
             "time": "4 Month(s)",
             "type": "f"
         },
+        "FK": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "FM": {
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "FO": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "FR": {
             "note": "",
@@ -350,20 +410,40 @@
             "time": "",
             "type": "r"
         },
-        "GH": {
+        "GG": {
             "note": "",
-            "time": "90 Day(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
+        },
+        "GH": {
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "GI": {
             "note": "UK visa accepted (must be valid for one year).",
             "time": "",
             "type": "r"
         },
-        "GN": {
+        "GL": {
             "note": "",
             "time": "",
-            "type": "f"
+            "type": "r"
+        },
+        "GM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GN": {
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
+        },
+        "GP": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "GQ": {
             "note": "",
@@ -371,6 +451,11 @@
             "type": "r"
         },
         "GR": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GS": {
             "note": "",
             "time": "",
             "type": "r"
@@ -386,19 +471,29 @@
             "type": "r"
         },
         "GW": {
-            "note": "",
-            "time": "90 Day(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "GY": {
             "note": "",
             "time": "",
             "type": "r"
         },
+        "HI": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "HK": {
             "note": "",
             "time": "3 Month(s)",
             "type": "f"
+        },
+        "HM": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "HN": {
             "note": "US, Canada or Schengen visa accepted.",
@@ -435,8 +530,18 @@
             "time": "",
             "type": "r"
         },
+        "IM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "IN": {
             "note": "Except for those holding a PIO card (Person of Indian Origin).",
+            "time": "",
+            "type": "r"
+        },
+        "IO": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -456,6 +561,11 @@
             "type": "r"
         },
         "IT": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "JE": {
             "note": "",
             "time": "",
             "type": "r"
@@ -556,9 +666,9 @@
             "type": "r"
         },
         "LR": {
-            "note": "",
+            "note": "Economic Community of West African States",
             "time": "",
-            "type": "f"
+            "type": "u"
         },
         "LS": {
             "note": "",
@@ -605,6 +715,11 @@
             "time": "",
             "type": "r"
         },
+        "MF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "MG": {
             "note": "",
             "time": "90 Day(s)",
@@ -621,9 +736,9 @@
             "type": "r"
         },
         "ML": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "MM": {
             "note": "",
@@ -642,6 +757,11 @@
         },
         "MP": {
             "note": "US visa accepted.",
+            "time": "",
+            "type": "r"
+        },
+        "MQ": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -701,9 +821,9 @@
             "type": "r"
         },
         "NE": {
-            "note": "",
+            "note": "Economic Community of West African States",
             "time": "",
-            "type": "f"
+            "type": "u"
         },
         "NF": {
             "note": "",
@@ -711,9 +831,9 @@
             "type": "r"
         },
         "NG": {
-            "note": "",
-            "time": "90 Day(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "NI": {
             "note": "",
@@ -786,6 +906,16 @@
             "type": "r"
         },
         "PL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "PM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "PN": {
             "note": "",
             "time": "",
             "type": "r"
@@ -875,7 +1005,17 @@
             "time": "30 Day(s)",
             "type": "f"
         },
+        "SH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "SI": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "SJ": {
             "note": "",
             "time": "",
             "type": "r"
@@ -886,9 +1026,9 @@
             "type": "r"
         },
         "SL": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "SM": {
             "note": "Same rules as for italy.",
@@ -896,9 +1036,9 @@
             "type": "r"
         },
         "SN": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "SO": {
             "note": "Except if of Somali origin.",
@@ -910,6 +1050,11 @@
             "time": "120 Day(s)",
             "type": "f"
         },
+        "SS": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "ST": {
             "note": "Registration made by airline.",
             "time": "1 Month(s)",
@@ -919,6 +1064,11 @@
             "note": "",
             "time": "",
             "type": "f"
+        },
+        "SX": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "SY": {
             "note": "Except if born in an arabic country.",
@@ -940,10 +1090,15 @@
             "time": "",
             "type": "r"
         },
-        "TG": {
+        "TF": {
             "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
+        },
+        "TG": {
+            "note": "Economic Community of West African States",
+            "time": "",
+            "type": "u"
         },
         "TH": {
             "note": "",
@@ -951,6 +1106,11 @@
             "type": "r"
         },
         "TJ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "TK": {
             "note": "",
             "time": "",
             "type": "r"
@@ -1010,6 +1170,11 @@
             "time": "6 Month(s)",
             "type": "f"
         },
+        "UM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "US": {
             "note": "",
             "time": "",
@@ -1059,6 +1224,11 @@
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "WF": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "WS": {
             "note": "",

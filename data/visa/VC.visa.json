@@ -5,12 +5,22 @@
     "name": "Saint Vincent and the Grenadines",
     "rank": 93,
     "requirements": {
+        "AB": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "AD": {
             "note": "Apply regulation of France or Spain.",
             "time": "",
             "type": "r"
         },
         "AE": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AF": {
             "note": "",
             "time": "",
             "type": "r"
@@ -40,6 +50,11 @@
             "time": "",
             "type": "r"
         },
+        "AQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "AR": {
             "note": "",
             "time": "3 Month(s)",
@@ -65,6 +80,11 @@
             "time": "30 Day(s)",
             "type": "f"
         },
+        "AX": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "AZ": {
             "note": "",
             "time": "30 Day(s)",
@@ -76,9 +96,9 @@
             "type": "r"
         },
         "BB": {
-            "note": "",
-            "time": "6 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "BD": {
             "note": "",
@@ -115,6 +135,11 @@
             "time": "",
             "type": "r"
         },
+        "BL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BM": {
             "note": "",
             "time": "6 Month(s)",
@@ -130,17 +155,27 @@
             "time": "",
             "type": "r"
         },
+        "BQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BR": {
             "note": "",
             "time": "",
             "type": "r"
         },
         "BS": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "BT": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "BV": {
             "note": "",
             "time": "",
             "type": "r"
@@ -156,14 +191,19 @@
             "type": "a"
         },
         "BZ": {
-            "note": "",
-            "time": "1 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "CA": {
             "note": "",
             "time": "6 Month(s)",
             "type": "f"
+        },
+        "CC": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "CD": {
             "note": "",
@@ -235,6 +275,11 @@
             "time": "3 Month(s)",
             "type": "f"
         },
+        "CX": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "CY": {
             "note": "",
             "time": "",
@@ -266,9 +311,9 @@
             "type": "f"
         },
         "DO": {
-            "note": "",
-            "time": "30 Day(s)",
-            "type": "a"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "DZ": {
             "note": "",
@@ -289,6 +334,11 @@
             "note": "",
             "time": "30 Day(s)",
             "type": "a"
+        },
+        "EH": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "ER": {
             "note": "",
@@ -315,10 +365,20 @@
             "time": "4 Month(s)",
             "type": "f"
         },
+        "FK": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "FM": {
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "FO": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "FR": {
             "note": "",
@@ -336,9 +396,9 @@
             "type": "f"
         },
         "GD": {
-            "note": "",
-            "time": "6 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "GE": {
             "note": "",
@@ -346,6 +406,11 @@
             "type": "a"
         },
         "GF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GG": {
             "note": "",
             "time": "",
             "type": "r"
@@ -360,6 +425,11 @@
             "time": "",
             "type": "f"
         },
+        "GL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GM": {
             "note": "",
             "time": "",
@@ -370,12 +440,22 @@
             "time": "",
             "type": "r"
         },
+        "GP": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GQ": {
             "note": "",
             "time": "",
             "type": "r"
         },
         "GR": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GS": {
             "note": "",
             "time": "",
             "type": "r"
@@ -396,14 +476,24 @@
             "type": "r"
         },
         "GY": {
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
+        },
+        "HI": {
             "note": "",
-            "time": "3 Month(s)",
+            "time": "",
             "type": "f"
         },
         "HK": {
             "note": "",
             "time": "3 Month(s)",
             "type": "f"
+        },
+        "HM": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "HN": {
             "note": "",
@@ -416,9 +506,9 @@
             "type": "r"
         },
         "HT": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "HU": {
             "note": "",
@@ -440,8 +530,18 @@
             "time": "3 Month(s)",
             "type": "f"
         },
+        "IM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "IN": {
             "note": "Except for those holding a PIO card (Person of Indian Origin).",
+            "time": "",
+            "type": "r"
+        },
+        "IO": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -465,10 +565,15 @@
             "time": "",
             "type": "r"
         },
-        "JM": {
+        "JE": {
             "note": "",
             "time": "",
-            "type": "f"
+            "type": "r"
+        },
+        "JM": {
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "JO": {
             "note": "",
@@ -506,9 +611,9 @@
             "type": "a"
         },
         "KN": {
-            "note": "",
-            "time": "6 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "KP": {
             "note": "",
@@ -546,9 +651,9 @@
             "type": "r"
         },
         "LC": {
-            "note": "",
-            "time": "6 Week(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "LI": {
             "note": "",
@@ -610,6 +715,11 @@
             "time": "",
             "type": "r"
         },
+        "MF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "MG": {
             "note": "",
             "time": "90 Day(s)",
@@ -650,15 +760,20 @@
             "time": "",
             "type": "r"
         },
+        "MQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "MR": {
             "note": "",
             "time": "",
             "type": "r"
         },
         "MS": {
-            "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
         },
         "MT": {
             "note": "",
@@ -795,6 +910,16 @@
             "time": "",
             "type": "r"
         },
+        "PM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "PN": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "PR": {
             "note": "Except if arriving directly from US.",
             "time": "",
@@ -880,7 +1005,17 @@
             "time": "30 Day(s)",
             "type": "f"
         },
+        "SH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "SI": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "SJ": {
             "note": "",
             "time": "",
             "type": "r"
@@ -911,9 +1046,14 @@
             "type": "r"
         },
         "SR": {
+            "note": "Caribbean Community",
+            "time": "",
+            "type": "u"
+        },
+        "SS": {
             "note": "",
-            "time": "120 Day(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
         },
         "ST": {
             "note": "Registration made by airline.",
@@ -924,6 +1064,11 @@
             "note": "",
             "time": "3 Month(s)",
             "type": "f"
+        },
+        "SX": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "SY": {
             "note": "Except if born in an arabic country.",
@@ -945,6 +1090,11 @@
             "time": "",
             "type": "r"
         },
+        "TF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "TG": {
             "note": "",
             "time": "7 Day(s)",
@@ -956,6 +1106,11 @@
             "type": "r"
         },
         "TJ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "TK": {
             "note": "",
             "time": "",
             "type": "r"
@@ -986,9 +1141,9 @@
             "type": "a"
         },
         "TT": {
-            "note": "",
+            "note": "Caribbean Community",
             "time": "",
-            "type": "f"
+            "type": "u"
         },
         "TV": {
             "note": "",
@@ -1015,6 +1170,11 @@
             "time": "6 Month(s)",
             "type": "f"
         },
+        "UM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "US": {
             "note": "",
             "time": "",
@@ -1031,6 +1191,11 @@
             "type": "r"
         },
         "VA": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "VC": {
             "note": "",
             "time": "",
             "type": "r"
@@ -1059,6 +1224,11 @@
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "WF": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "WS": {
             "note": "",

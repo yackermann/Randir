@@ -5,12 +5,22 @@
     "name": "Costa Rica",
     "rank": 78,
     "requirements": {
+        "AB": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "AD": {
             "note": "Apply regulation of France or Spain.",
             "time": "",
             "type": "r"
         },
         "AE": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AF": {
             "note": "",
             "time": "",
             "type": "r"
@@ -40,6 +50,11 @@
             "time": "",
             "type": "r"
         },
+        "AQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "AR": {
             "note": "",
             "time": "3 Month(s)",
@@ -64,6 +79,11 @@
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "AX": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "AZ": {
             "note": "",
@@ -115,6 +135,11 @@
             "time": "",
             "type": "r"
         },
+        "BL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BM": {
             "note": "",
             "time": "6 Month(s)",
@@ -129,6 +154,11 @@
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "BQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "BR": {
             "note": "",
@@ -145,6 +175,11 @@
             "time": "",
             "type": "r"
         },
+        "BV": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BW": {
             "note": "",
             "time": "",
@@ -156,11 +191,16 @@
             "type": "a"
         },
         "BZ": {
-            "note": "",
-            "time": "30 Day(s)",
-            "type": "f"
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
         },
         "CA": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "CC": {
             "note": "",
             "time": "",
             "type": "r"
@@ -215,6 +255,11 @@
             "time": "90 Day(s)",
             "type": "f"
         },
+        "CR": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "CU": {
             "note": "",
             "time": "",
@@ -229,6 +274,11 @@
             "note": "",
             "time": "3 Month(s)",
             "type": "f"
+        },
+        "CX": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "CY": {
             "note": "",
@@ -261,9 +311,9 @@
             "type": "f"
         },
         "DO": {
-            "note": "",
-            "time": "30 Day(s)",
-            "type": "a"
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
         },
         "DZ": {
             "note": "",
@@ -284,6 +334,11 @@
             "note": "",
             "time": "15 Day(s)",
             "type": "a"
+        },
+        "EH": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "ER": {
             "note": "",
@@ -310,10 +365,20 @@
             "time": "",
             "type": "r"
         },
+        "FK": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "FM": {
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "FO": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "FR": {
             "note": "",
@@ -345,6 +410,11 @@
             "time": "3 Month(s)",
             "type": "f"
         },
+        "GG": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GH": {
             "note": "",
             "time": "",
@@ -355,12 +425,22 @@
             "time": "",
             "type": "f"
         },
+        "GL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GM": {
             "note": "",
             "time": "",
             "type": "r"
         },
         "GN": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GP": {
             "note": "",
             "time": "",
             "type": "r"
@@ -375,10 +455,15 @@
             "time": "3 Month(s)",
             "type": "f"
         },
-        "GT": {
+        "GS": {
             "note": "",
-            "time": "90 Day(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
+        },
+        "GT": {
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
         },
         "GU": {
             "note": "Same conditions as for mainland US.",
@@ -395,15 +480,25 @@
             "time": "",
             "type": "r"
         },
+        "HI": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "HK": {
             "note": "",
             "time": "1 Month(s)",
             "type": "f"
         },
-        "HN": {
+        "HM": {
             "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
+        },
+        "HN": {
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
         },
         "HR": {
             "note": "",
@@ -435,8 +530,18 @@
             "time": "3 Month(s)",
             "type": "f"
         },
+        "IM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "IN": {
             "note": "Except for those holding a PIO card (Person of Indian Origin).",
+            "time": "",
+            "type": "r"
+        },
+        "IO": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -459,6 +564,11 @@
             "note": "",
             "time": "90 Day(s)",
             "type": "f"
+        },
+        "JE": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "JM": {
             "note": "",
@@ -605,6 +715,11 @@
             "time": "90 Day(s)",
             "type": "f"
         },
+        "MF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "MG": {
             "note": "",
             "time": "90 Day(s)",
@@ -642,6 +757,11 @@
         },
         "MP": {
             "note": "US visa accepted.",
+            "time": "",
+            "type": "r"
+        },
+        "MQ": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -716,9 +836,9 @@
             "type": "r"
         },
         "NI": {
-            "note": "",
+            "note": "Central American Integration System",
             "time": "",
-            "type": "a"
+            "type": "u"
         },
         "NL": {
             "note": "",
@@ -756,9 +876,9 @@
             "type": "r"
         },
         "PA": {
-            "note": "",
-            "time": "30 Day(s)",
-            "type": "f"
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
         },
         "PE": {
             "note": "",
@@ -789,6 +909,16 @@
             "note": "",
             "time": "90 Day(s)",
             "type": "f"
+        },
+        "PM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "PN": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "PR": {
             "note": "Except if arriving directly from US.",
@@ -875,10 +1005,20 @@
             "time": "30 Day(s)",
             "type": "f"
         },
+        "SH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "SI": {
             "note": "",
             "time": "90 Day(s)",
             "type": "f"
+        },
+        "SJ": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "SK": {
             "note": "",
@@ -910,15 +1050,25 @@
             "time": "",
             "type": "r"
         },
+        "SS": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "ST": {
             "note": "Registration made by airline.",
             "time": "1 Month(s)",
             "type": "a"
         },
         "SV": {
+            "note": "Central American Integration System",
+            "time": "",
+            "type": "u"
+        },
+        "SX": {
             "note": "",
-            "time": "3 Month(s)",
-            "type": "f"
+            "time": "",
+            "type": "r"
         },
         "SY": {
             "note": "Except if born in an arabic country.",
@@ -940,6 +1090,11 @@
             "time": "",
             "type": "r"
         },
+        "TF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "TG": {
             "note": "",
             "time": "7 Day(s)",
@@ -951,6 +1106,11 @@
             "type": "r"
         },
         "TJ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "TK": {
             "note": "",
             "time": "",
             "type": "r"
@@ -1010,6 +1170,11 @@
             "time": "",
             "type": "a"
         },
+        "UM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "US": {
             "note": "",
             "time": "",
@@ -1056,6 +1221,11 @@
             "type": "r"
         },
         "VU": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "WF": {
             "note": "",
             "time": "",
             "type": "r"

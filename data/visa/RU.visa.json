@@ -5,12 +5,22 @@
     "name": "Russia",
     "rank": 96,
     "requirements": {
+        "AB": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "AD": {
             "note": "Apply regulation of France or Spain.",
             "time": "",
             "type": "r"
         },
         "AE": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AF": {
             "note": "",
             "time": "",
             "type": "r"
@@ -31,11 +41,16 @@
             "type": "r"
         },
         "AM": {
-            "note": "",
-            "time": "",
+            "note": "Visiting Armenia may cause problems in visiting Azerbaijan due to Nagorno-Karabakh conflict.",
+            "time": "90 day(s)",
             "type": "f"
         },
         "AO": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "AQ": {
             "note": "",
             "time": "",
             "type": "r"
@@ -65,9 +80,14 @@
             "time": "30 Day(s)",
             "type": "f"
         },
-        "AZ": {
+        "AX": {
             "note": "",
             "time": "",
+            "type": "r"
+        },
+        "AZ": {
+            "note": "Due to Nagorno-Karabakh conflict any person of Armenia nationality will be declined to enter. Any person with Nagorno-Karabakh stamp in pasport will be declined to enter.",
+            "time": "30 day(s)",
             "type": "f"
         },
         "BA": {
@@ -81,8 +101,8 @@
             "type": "f"
         },
         "BD": {
-            "note": "",
-            "time": "90 Day(s)",
+            "note": "Visa cost 50.",
+            "time": "90 day(s)",
             "type": "a"
         },
         "BE": {
@@ -101,8 +121,8 @@
             "type": "r"
         },
         "BH": {
-            "note": "",
-            "time": "14 Day(s)",
+            "note": "Visa cost 5BHD.",
+            "time": "14 day(s)",
             "type": "a"
         },
         "BI": {
@@ -111,6 +131,11 @@
             "type": "r"
         },
         "BJ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "BL": {
             "note": "",
             "time": "",
             "type": "r"
@@ -130,6 +155,11 @@
             "time": "",
             "type": "r"
         },
+        "BQ": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "BR": {
             "note": "",
             "time": "",
@@ -141,6 +171,11 @@
             "type": "f"
         },
         "BT": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "BV": {
             "note": "",
             "time": "",
             "type": "r"
@@ -161,6 +196,11 @@
             "type": "r"
         },
         "CA": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "CC": {
             "note": "",
             "time": "",
             "type": "r"
@@ -206,9 +246,9 @@
             "type": "r"
         },
         "CN": {
-            "note": "",
-            "time": "",
-            "type": "r"
+            "note": "Visa cost 100USD",
+            "time": "30 day(s)",
+            "type": "a"
         },
         "CO": {
             "note": "",
@@ -235,10 +275,15 @@
             "time": "",
             "type": "r"
         },
-        "CY": {
+        "CX": {
             "note": "",
             "time": "",
             "type": "r"
+        },
+        "CY": {
+            "note": "",
+            "time": "",
+            "type": "o"
         },
         "CZ": {
             "note": "",
@@ -290,6 +335,11 @@
             "time": "15 Day(s)",
             "type": "a"
         },
+        "EH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "ER": {
             "note": "",
             "time": "",
@@ -315,10 +365,20 @@
             "time": "4 Month(s)",
             "type": "f"
         },
+        "FK": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "FM": {
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "FO": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "FR": {
             "note": "",
@@ -341,11 +401,16 @@
             "type": "f"
         },
         "GE": {
-            "note": "",
-            "time": "",
-            "type": "a"
+            "note": "Having South Ossetia or Abkhazia's stamp in pasport could lead to administrative or even a criminal responsibility.",
+            "time": "90 day(s)",
+            "type": "f"
         },
         "GF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GG": {
             "note": "",
             "time": "",
             "type": "r"
@@ -360,6 +425,11 @@
             "time": "",
             "type": "r"
         },
+        "GL": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GM": {
             "note": "",
             "time": "",
@@ -370,12 +440,22 @@
             "time": "",
             "type": "r"
         },
+        "GP": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "GQ": {
             "note": "",
             "time": "",
             "type": "r"
         },
         "GR": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "GS": {
             "note": "",
             "time": "",
             "type": "r"
@@ -400,10 +480,20 @@
             "time": "",
             "type": "r"
         },
+        "HI": {
+            "note": "",
+            "time": "",
+            "type": "f"
+        },
         "HK": {
             "note": "",
-            "time": "14 Day(s)",
+            "time": "14 day(s)",
             "type": "f"
+        },
+        "HM": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "HN": {
             "note": "",
@@ -426,8 +516,8 @@
             "type": "r"
         },
         "ID": {
-            "note": "",
-            "time": "30 Day(s)",
+            "note": "Visa cost 30",
+            "time": "30 day(s)",
             "type": "a"
         },
         "IE": {
@@ -437,23 +527,33 @@
         },
         "IL": {
             "note": "",
-            "time": "3 Month(s)",
+            "time": "90 day(s)",
             "type": "f"
+        },
+        "IM": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "IN": {
             "note": "Except for those holding a PIO card (Person of Indian Origin).",
             "time": "",
             "type": "r"
         },
-        "IQ": {
-            "note": "Only available at Erbil international airport.",
+        "IO": {
+            "note": "",
             "time": "",
-            "type": "a"
+            "type": "r"
+        },
+        "IQ": {
+            "note": "De-jure visa free, De-facto declined since tourist companies do not work with Iraq as requested by Ministry of Foreign Affairs of the Russian Federation",
+            "time": "",
+            "type": "d"
         },
         "IR": {
-            "note": "Need a pre-approval code obtained at www. mfa. gov. ir.",
-            "time": "15 Day(s)",
-            "type": "r"
+            "note": "Visa cost 60EUR. Female travelers adviced to pre-register before entering the country.",
+            "time": "14 day(s)",
+            "type": "a"
         },
         "IS": {
             "note": "",
@@ -465,14 +565,19 @@
             "time": "",
             "type": "r"
         },
+        "JE": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "JM": {
             "note": "",
             "time": "",
             "type": "a"
         },
         "JO": {
-            "note": "",
-            "time": "",
+            "note": "Visa cost 40JOD",
+            "time": "30 day(s)",
             "type": "a"
         },
         "JP": {
@@ -487,12 +592,12 @@
         },
         "KG": {
             "note": "",
-            "time": "",
-            "type": "f"
+            "time": "90 day(s)",
+            "type": "a"
         },
         "KH": {
-            "note": "",
-            "time": "30 Day(s)",
+            "note": "Visa cost 25USD",
+            "time": "30 day(s)",
             "type": "a"
         },
         "KI": {
@@ -521,9 +626,9 @@
             "type": "f"
         },
         "KW": {
-            "note": "",
-            "time": "",
-            "type": "r"
+            "note": "Visa cost 20USD",
+            "time": "30 day(s)",
+            "type": "a"
         },
         "KY": {
             "note": "",
@@ -537,13 +642,13 @@
         },
         "LA": {
             "note": "",
-            "time": "30 Day(s)",
-            "type": "a"
+            "time": "15 day(s)",
+            "type": "f"
         },
         "LB": {
             "note": "",
-            "time": "3 Month(s)",
-            "type": "a"
+            "time": "30 day(s)",
+            "type": "f"
         },
         "LC": {
             "note": "Except if travelling for the purpose of embarking or joining a yacht.",
@@ -610,6 +715,11 @@
             "time": "30 Day(s)",
             "type": "f"
         },
+        "MF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "MG": {
             "note": "",
             "time": "90 Day(s)",
@@ -642,11 +752,16 @@
         },
         "MO": {
             "note": "",
-            "time": "",
-            "type": "a"
+            "time": "30 day(s)",
+            "type": "f"
         },
         "MP": {
             "note": "US visa accepted.",
+            "time": "",
+            "type": "r"
+        },
+        "MQ": {
+            "note": "",
             "time": "",
             "type": "r"
         },
@@ -672,8 +787,8 @@
         },
         "MV": {
             "note": "",
-            "time": "30 Day(s)",
-            "type": "a"
+            "time": "30 day(s)",
+            "type": "f"
         },
         "MW": {
             "note": "",
@@ -795,6 +910,16 @@
             "time": "",
             "type": "r"
         },
+        "PM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
+        "PN": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "PR": {
             "note": "Except if arriving directly from US.",
             "time": "",
@@ -840,6 +965,11 @@
             "time": "90 Day(s)",
             "type": "f"
         },
+        "RU": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "RW": {
             "note": "",
             "time": "",
@@ -875,10 +1005,20 @@
             "time": "",
             "type": "r"
         },
+        "SH": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "SI": {
             "note": "",
             "time": "",
             "type": "r"
+        },
+        "SJ": {
+            "note": "Svalbard Treaty",
+            "time": "",
+            "type": "f"
         },
         "SK": {
             "note": "",
@@ -910,6 +1050,11 @@
             "time": "",
             "type": "r"
         },
+        "SS": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "ST": {
             "note": "Registration made by airline.",
             "time": "1 Month(s)",
@@ -919,6 +1064,11 @@
             "note": "",
             "time": "",
             "type": "f"
+        },
+        "SX": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "SY": {
             "note": "",
@@ -940,6 +1090,11 @@
             "time": "",
             "type": "r"
         },
+        "TF": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "TG": {
             "note": "",
             "time": "7 Day(s)",
@@ -955,9 +1110,14 @@
             "time": "",
             "type": "f"
         },
-        "TL": {
+        "TK": {
             "note": "",
-            "time": "30 Day(s)",
+            "time": "",
+            "type": "r"
+        },
+        "TL": {
+            "note": "Visa cost 30.",
+            "time": "30 day(s)",
             "type": "a"
         },
         "TM": {
@@ -1010,6 +1170,11 @@
             "time": "",
             "type": "a"
         },
+        "UM": {
+            "note": "",
+            "time": "",
+            "type": "r"
+        },
         "US": {
             "note": "",
             "time": "",
@@ -1052,13 +1217,18 @@
         },
         "VN": {
             "note": "",
-            "time": "15 Day(s)",
+            "time": "15 day(s)",
             "type": "f"
         },
         "VU": {
             "note": "",
             "time": "30 Day(s)",
             "type": "f"
+        },
+        "WF": {
+            "note": "",
+            "time": "",
+            "type": "r"
         },
         "WS": {
             "note": "",
