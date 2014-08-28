@@ -2,12 +2,46 @@
 
     $.fn.cigto = function(params) {
         var struct = {},
+            visacodes = {
+                'a': {
+                    colour : 'rgba(255, 255, 0, 0.2)',
+                    description : 'Visa on arrival.'
+                },
+                'r': {
+                    colour : 'rgba(255, 0, 0, 0.2)',
+                    description : 'Visa required.'
+                },
+                'd': {
+                    colour : 'rgba(0, 0, 0, 0.4)',
+                    description : 'Visa refused.'
+                },
+                'u': {
+                    colour : 'rgba(0, 0, 255, 0.2)',
+                    description : 'Customs union.'
+                },
+                'f': {
+                    colour : 'rgba(0, 255, 0, 0.2)',
+                    description : 'Visa not required'
+                },
+                'o': {
+                    colour : 'rgba(204, 255, 255, 0.4)',
+                    description : 'Visa gained online' 
+                },
+                'e': {
+                    colour : 'rgba(152,251,152, 0.5)',
+                    description : 'Electronic visa required.'
+                },
+                'self': {
+                    colour : 'rgba(0, 0, 255, 0.4)',
+                    description : ''
+                }
+            },
             options = $.extend({
                 zoom: 2,
                 center: [0, 0]
             }, params),
             message = function(msg, status){
-                options.notify.html('<span class="' + status + '"></span> ' + msg);
+                options.notify.html('<span class=\'' + status + '\'></span> ' + msg);
                 options.notify.animate({bottom:0},500).delay(3000).animate({bottom:-200},500);
             },
             cache = {
@@ -24,7 +58,7 @@
                                 return localStorage[url];
                             })
                             .fail(function() {
-                                return "@error@"
+                                return '@error@'
                             })
                     } else return localStorage[url];
                 }
@@ -49,7 +83,7 @@
                     //     source: new ol.source.OSM()
                     // })
                 ],
-                target: this.attr("id"),
+                target: this.attr('id'),
                 view: new ol.View({
                     center: options.center,
                     zoom: options.zoom,
@@ -69,8 +103,8 @@
                     var overlayer = function(k, v) {
                         var x = vectorSource.getFeatureById(k);
                         if (x != null) {
-                            x.set("info", struct[k]);
-                            x.set("type", v);
+                            x.set('info', struct[k]);
+                            x.set('type', v);
                             map.addOverlay(
                                 new ol.FeatureOverlay({
                                     map: map,
@@ -80,18 +114,7 @@
                                             width: 0.5
                                         }),
                                         fill: new ol.style.Fill({
-                                            color: (function() {
-                                                return {
-                                                    "a": "rgba(255, 255, 0, 0.2)",
-                                                    "r": "rgba(255, 0, 0, 0.2)",
-                                                    "d": "rgba(0, 0, 0, 0.4)",
-                                                    "u": "rgba(0, 0, 255, 0.2)",
-                                                    "f": "rgba(0, 255, 0, 0.2)",
-                                                    "o": "rgba(204, 255, 255, 0.4)",
-                                                    "esta":"rgba(152,251,152, 0.5)",
-                                                    "self": "rgba(0, 0, 255, 0.4)",
-                                                }[v] || "rgba(255, 165, 0, 0.1)"
-                                            })()
+                                            color: visacodes[v].colour || 'rgba(255, 165, 0, 0.1)'
                                         })
                                     }),
                                     features: [x]
@@ -99,26 +122,26 @@
                             );
                         } else console.log(k);
                     };
-                    $.getJSON("data/visa/" + from + ".visa.json", function(data) {
-                        overlayer(from, "self")
+                    $.getJSON('data/visa/' + from + '.visa.json', function(data) {
+                        overlayer(from, 'self')
                         $.each(data.requirements, function(key, val) {
                             overlayer(key, val.type)
                         })
                     }).fail(function() {
-                        message("Sorry, visa information for "+ vectorSource.getFeatureById(from).get('name') + " is not available yet.", "a")
-                        console.log("Блеять! 404 епта!")
+                        message('Sorry, visa information for '+ vectorSource.getFeatureById(from).get('name') + ' is not available yet.', 'a')
+                        console.log('Блеять! 404 епта!')
                     })
                 },
 
-                /*@Adds features to the map@*/
+                /*@Geo features to the map@*/
                 Fill: function() {
                     dataDraw.Clear();
                     $.getJSON(options.data.info, function(data) {
                         $.each(data, function(key, val) {
                             var x = vectorSource.getFeatureById(val.cca2);
                             if (x != null) {
-                                x.set("info", val);
-                                x.set("type", "");
+                                x.set('info', val);
+                                x.set('type', '');
                                 map.addOverlay(
                                     new ol.FeatureOverlay({
                                         map: map,
@@ -130,12 +153,12 @@
                                             fill: new ol.style.Fill({
                                                 color: (function() {
                                                     return {
-                                                        "Asia": "rgba(255, 255, 0, 0.2)",
-                                                        "Europe": "rgba(255, 0, 0, 0.2)",
-                                                        "Africa": "rgba(255, 165, 0, 0.2)",
-                                                        "Oceania": "rgba(0, 0, 255, 0.2)",
-                                                        "Americas": "rgba(0, 255, 0, 0.2)"
-                                                    }[val.region] || "rgba(0, 0, 0, 0.4)"
+                                                        'Asia': 'rgba(255, 255, 0, 0.2)',
+                                                        'Europe': 'rgba(255, 0, 0, 0.2)',
+                                                        'Africa': 'rgba(255, 165, 0, 0.2)',
+                                                        'Oceania': 'rgba(0, 0, 255, 0.2)',
+                                                        'Americas': 'rgba(0, 255, 0, 0.2)'
+                                                    }[val.region] || 'rgba(0, 0, 0, 0.4)'
                                                 })()
                                             })
                                         }),
@@ -192,22 +215,9 @@
                     var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
                         return feature;
                     });
-
-                    var visadec = function(t) {
-                        return {
-                            "self": feature.get('name'),
-                            "a": "Visa on arrival.",
-                            "r": "Visa required.",
-                            "d": "Visa refused.",
-                            "u": "Customs union.",
-                            "o": "Visa gained online",
-                            "esta": "Electronic System for Travel Authorization",
-                            "f": "Visa not required"
-                        }[t] || ""
-                    }
                     if(feature){
                         if(feature.get('type') && feature){
-                            options.info.html('<h3>' + feature.get('name') + ' <span class="circle ' + feature.get('type') + '"></span> ' + visadec(feature.get('type')) + '</h3>')
+                            options.info.html('<h3>' + feature.get('name') + ' <span class=\'circle ' + feature.get('type') + '\'></span> ' + visacodes[feature.get('type')].description + '</h3>')
                             // console.log(options.info.html())
                         }else{
                             options.info.html('<h3>' + feature.get('name') + '</h3>');
@@ -216,7 +226,7 @@
                     }else{options.info.html('');}
 
                     var action = {
-                        "highlight": function() {
+                        'highlight': function() {
                             if (feature !== dataDraw.highlighted) {
                                 if (dataDraw.highlighted) dataDraw.Highlight.removeFeature(dataDraw.highlighted);
                                 if (feature) dataDraw.Highlight.addFeature(feature);
@@ -224,7 +234,7 @@
                             }
                         },
 
-                        "select": function() {
+                        'select': function() {
                             if (feature !== dataDraw.selected) {
                                 if (dataDraw.selected) {
                                     options.wiki.animate({
@@ -236,13 +246,13 @@
                                 if (feature) {
                                     dataDraw.Select.addFeature(feature);
                                     options.loader.show();
-                                    var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + feature.get("info").name + "&callback=?";
+                                    var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name + '&callback=?';
                                     var resolver = setInterval(function() {
-                                        if (cache.get(url) && cache.get(url) !== "@error@") {
+                                        if (cache.get(url) && cache.get(url) !== '@error@') {
                                             if (feature == dataDraw.selected) {
                                                 clearInterval(resolver)
                                                 var datap = JSON.parse(cache.get(url))
-                                                var blurb = $('<div></div>').html(datap.parse.text["*"]);
+                                                var blurb = $('<div></div>').html(datap.parse.text['*']);
                                                 blurb.find('a').each(function() {
                                                     $(this).replaceWith($(this).html());
                                                 });
@@ -256,12 +266,12 @@
                                                     height:400,
                                                 },400)
                                                 $(options.wiki).append($(blurb).find('p'));
-                                                $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get("info").name + '>Wikipedia</a></p>').scrollTop(0);
+                                                $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get('info').name + '>Wikipedia</a></p>').scrollTop(0);
                                             }
-                                        }else if(cache.get(url) == "@error@"){
+                                        }else if(cache.get(url) == '@error@'){
                                                 clearInterval(resolver);
                                                 options.loader.hide();
-                                                $(options.wiki).append("<p>Error while loading data.</p>");
+                                                $(options.wiki).append('<p>Error while loading data.</p>');
                                         }
                                     }, 500);
 
@@ -279,7 +289,7 @@
                 clearInterval(resolver);
                 var data = JSON.parse(cache.get(options.data.info));
                 $.each(data, function(key, val) {
-                    options.choser.append('<option value="' + val.cca2 + '">' + val.name + '</option>')
+                    options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
                 // dataDraw.Fill()
@@ -289,24 +299,24 @@
         // dataDraw.Fill()
         // $(document).keyup(function(e) {
         //     if (e.keyCode == 27) {
-        //         alert("esc")
+        //         alert('esc')
         //     }
         // })
         map.on('click', function(evt) {
-            dataDraw.Info(evt.pixel, "select");
+            dataDraw.Info(evt.pixel, 'select');
         });
 
         $(map.getViewport()).on('mousemove', function(evt) {
-            dataDraw.Info(map.getEventPixel(evt.originalEvent), "highlight");
+            dataDraw.Info(map.getEventPixel(evt.originalEvent), 'highlight');
         });
 
         options.choser.change(function() {
-            var str = "";
-            $("option:selected", options.choser).each(function() {
-                str += $(this).attr("value");
+            var str = '';
+            $('option:selected', options.choser).each(function() {
+                str += $(this).attr('value');
             });
             // console.log(str)
-            str == "undefined" ? dataDraw.Clear() : dataDraw.Visa(str);
+            str == 'undefined' ? dataDraw.Clear() : dataDraw.Visa(str);
         });
         options.refresh.click(function(){
             confirm('Are you sure you want to refresh you cache?') ? (function() {
@@ -314,7 +324,7 @@
                 var resolver = setInterval(function() {
                     if (cache.get(options.data.info)) {
                         clearInterval(resolver);
-                        message("Cache have been successfully refreshed.","i")
+                        message('Cache have been successfully refreshed.','i')
                     }
                 }, 300)
             })() : ''
