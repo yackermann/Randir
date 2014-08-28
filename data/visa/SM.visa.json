@@ -1030,11 +1030,6 @@
             "time": "",
             "type": "r"
         },
-        "SM": {
-            "note": "",
-            "time": "",
-            "type": "r"
-        },
         "SN": {
             "note": "",
             "time": "",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "Except if born in Uruguay.",

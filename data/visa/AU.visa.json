@@ -70,11 +70,6 @@
             "time": "3 Month(s)",
             "type": "f"
         },
-        "AU": {
-            "note": "Trans-Tasman Travel Arrangement",
-            "time": "",
-            "type": "u"
-        },
         "AW": {
             "note": "",
             "time": "30 Day(s)",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "",

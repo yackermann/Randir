@@ -1150,11 +1150,6 @@
             "time": "1 Month(s)",
             "type": "a"
         },
-        "TW": {
-            "note": "",
-            "time": "",
-            "type": "r"
-        },
         "TZ": {
             "note": "",
             "time": "",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "Except if born in Uruguay.",

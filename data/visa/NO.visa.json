@@ -845,11 +845,6 @@
             "time": "",
             "type": "u"
         },
-        "NO": {
-            "note": "",
-            "time": "",
-            "type": "r"
-        },
         "NP": {
             "note": "",
             "time": "",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "",

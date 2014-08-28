@@ -555,11 +555,6 @@
             "time": "15 Day(s)",
             "type": "r"
         },
-        "IS": {
-            "note": "",
-            "time": "",
-            "type": "r"
-        },
         "IT": {
             "note": "Schengen Agreement",
             "time": "",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "",

@@ -1000,11 +1000,6 @@
             "time": "3 Month(s)",
             "type": "f"
         },
-        "SG": {
-            "note": "",
-            "time": "",
-            "type": "r"
-        },
         "SH": {
             "note": "",
             "time": "",
@@ -1178,7 +1173,7 @@
         "US": {
             "note": "Electronic System for Travel Authorization",
             "time": "",
-            "type": "esta"
+            "type": "e"
         },
         "UY": {
             "note": "Except if born in Uruguay.",
