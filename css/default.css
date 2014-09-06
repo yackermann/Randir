@@ -83,12 +83,19 @@ body,
 }
 
 
-.nav {
+.nav{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px
+}
+.controls {
+    width: 30px;
     position: absolute;
     top: 0;
     right: 0;
     padding: 15px
 }
-.nav img{
+.nav, .controls img{
     -webkit-filter: invert(100%);  
 }

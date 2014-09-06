@@ -36,6 +36,7 @@
                     description : ''
                 }
             },
+            mode = 'select',
             options = $.extend({
                 zoom: 2,
                 center: [0, 0]
@@ -64,9 +65,7 @@
                 }
             },
             map = new ol.Map({
-                controls: ol.control.defaults().extend([
-                    new ol.control.FullScreen()
-                ]),
+                
                 layers: [
                     new ol.layer.Tile({
                         source: new ol.source.BingMaps({
@@ -90,7 +89,6 @@
                     minZoom: 2,
                 })
             }),
-
             vectorSource = new ol.source.GeoJSON({
                 projection: 'EPSG:3857',
                 url: options.data.geo
@@ -99,6 +97,7 @@
             dataDraw = {
                 /*@Adds features to the map@*/
                 Visa: function(from) {
+                    mode = 'notselect';
                     dataDraw.Clear();
                     var overlayer = function(k, v) {
                         var x = vectorSource.getFeatureById(k);
@@ -120,7 +119,7 @@
                                     features: [x]
                                 })
                             );
-                        } else console.log(k);
+                        } //else console.log(k);
                     };
                     $.getJSON('data/visa/' + from + '.visa.json', function(data) {
                         overlayer(from, 'self')
@@ -136,6 +135,7 @@
                 /*@Geo features to the map@*/
                 Fill: function() {
                     dataDraw.Clear();
+                    mode = 'select';
                     $.getJSON(options.data.info, function(data) {
                         $.each(data, function(key, val) {
                             var x = vectorSource.getFeatureById(val.cca2);
@@ -165,7 +165,7 @@
                                         features: [x]
                                     })
                                 );
-                            } else console.log(val.cca2);
+                            } //else console.log(val.cca2);
                         })
                     })
 
@@ -244,36 +244,41 @@
                                     options.loader.hide();
                                 }
                                 if (feature) {
-                                    dataDraw.Select.addFeature(feature);
-                                    options.loader.show();
-                                    var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name + '&callback=?';
-                                    var resolver = setInterval(function() {
-                                        if (cache.get(url) && cache.get(url) !== '@error@') {
-                                            if (feature == dataDraw.selected) {
-                                                clearInterval(resolver)
-                                                var datap = JSON.parse(cache.get(url))
-                                                var blurb = $('<div></div>').html(datap.parse.text['*']);
-                                                blurb.find('a').each(function() {
-                                                    $(this).replaceWith($(this).html());
-                                                });
-                                                blurb.find('sup').remove();
-                                                blurb.find('.mw-ext-cite-error').remove();
-                                                blurb.find('#coordinates').parent().parent().remove()
-                                                blurb.find('.nowrap').remove()
+                                    if(mode != 'select'){
+                                        dataDraw.Select.addFeature(feature);
+                                        options.loader.show();
+                                        var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name + '&callback=?';
+                                        var resolver = setInterval(function() {
+                                            if (cache.get(url) && cache.get(url) !== '@error@') {
+                                                if (feature == dataDraw.selected) {
+                                                    clearInterval(resolver)
+                                                    var datap = JSON.parse(cache.get(url))
+                                                    var blurb = $('<div></div>').html(datap.parse.text['*']);
+                                                    blurb.find('a').each(function() {
+                                                        $(this).replaceWith($(this).html());
+                                                    });
+                                                    blurb.find('sup').remove();
+                                                    blurb.find('.mw-ext-cite-error').remove();
+                                                    blurb.find('#coordinates').parent().parent().remove()
+                                                    blurb.find('.nowrap').remove()
 
-                                                options.loader.hide();
-                                                options.wiki.animate({
-                                                    height:400,
-                                                },400)
-                                                $(options.wiki).append($(blurb).find('p'));
-                                                $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get('info').name + '>Wikipedia</a></p>').scrollTop(0);
+                                                    options.loader.hide();
+                                                    options.wiki.animate({
+                                                        height:400,
+                                                    },400)
+                                                    $(options.wiki).append($(blurb).find('p'));
+                                                    $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get('info').name + '>Wikipedia</a></p>').scrollTop(0);
+                                                }
+                                            }else if(cache.get(url) == '@error@'){
+                                                    clearInterval(resolver);
+                                                    options.loader.hide();
+                                                    $(options.wiki).append('<p>Error while loading data.</p>');
                                             }
-                                        }else if(cache.get(url) == '@error@'){
-                                                clearInterval(resolver);
-                                                options.loader.hide();
-                                                $(options.wiki).append('<p>Error while loading data.</p>');
-                                        }
-                                    }, 500);
+                                        }, 500);
+                                    }else{
+                                        dataDraw.Visa(feature.getId());
+                                        $("#selecter").select2("val", feature.getId());
+                                    }
 
                                 }
                                 dataDraw.selected = feature;
@@ -292,33 +297,40 @@
                     options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name + '</option>')
                     struct[val.cca2] = val
                 })
-                // dataDraw.Fill()
+                dataDraw.Fill()
             }
         }, 300);
 
         // dataDraw.Fill()
-        // $(document).keyup(function(e) {
-        //     if (e.keyCode == 27) {
-        //         alert('esc')
-        //     }
-        // })
-        map.on('click', function(evt) {
+        $(document).keyup(function(e) {
+            if (e.keyCode == 27 & mode != 'select') {
+                $("#selecter").select2("val", "");
+                dataDraw.Fill()
+            }
+        })
+        map.on('click', function(evt) {//Feature select handler
             dataDraw.Info(evt.pixel, 'select');
         });
 
-        $(map.getViewport()).on('mousemove', function(evt) {
+        $(map.getViewport()).on('mousemove', function(evt) {//Feature highlight handler
             dataDraw.Info(map.getEventPixel(evt.originalEvent), 'highlight');
         });
 
-        options.choser.change(function() {
+        options.choser.change(function() { //Country select handler
             var str = '';
             $('option:selected', options.choser).each(function() {
                 str += $(this).attr('value');
             });
             // console.log(str)
-            str == 'undefined' ? dataDraw.Clear() : dataDraw.Visa(str);
+            str == 'undefined' ? dataDraw.Fill() : dataDraw.Visa(str);
         });
-        options.refresh.click(function(){
+        options.zoomin.click(function(){
+            map.getView().setZoom(map.getView().getZoom() + 1)
+        })
+        options.zoomout.click(function(){
+            map.getView().setZoom(map.getView().getZoom() - 1)
+        })
+        options.refresh.click(function(){ //Refresh cace handler
             confirm('Are you sure you want to refresh you cache?') ? (function() {
                 localStorage.clear();
                 var resolver = setInterval(function() {
