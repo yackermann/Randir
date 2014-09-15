@@ -3,38 +3,14 @@
     $.fn.cigto = function(params) {
         var struct = {},
             visacodes = {
-                'a': {
-                    colour : 'rgba(255, 255, 0, 0.2)',
-                    description : 'Visa on arrival.'
-                },
-                'r': {
-                    colour : 'rgba(255, 0, 0, 0.2)',
-                    description : 'Visa required.'
-                },
-                'd': {
-                    colour : 'rgba(0, 0, 0, 0.4)',
-                    description : 'Visa refused.'
-                },
-                'u': {
-                    colour : 'rgba(0, 0, 255, 0.2)',
-                    description : 'Customs union.'
-                },
-                'f': {
-                    colour : 'rgba(0, 255, 0, 0.2)',
-                    description : 'Visa not required'
-                },
-                'o': {
-                    colour : 'rgba(204, 255, 255, 0.4)',
-                    description : 'Visa gained online' 
-                },
-                'e': {
-                    colour : 'rgba(152,251,152, 0.5)',
-                    description : 'Electronic visa required.'
-                },
-                'self': {
-                    colour : 'rgba(0, 0, 255, 0.4)',
-                    description : ''
-                }
+                'a': { colour : 'rgba(255, 255, 0, 0.2)', description : 'Visa on arrival.'},
+                'r': { colour : 'rgba(255, 0, 0, 0.2)', description : 'Visa required.'},
+                'd': { colour : 'rgba(0, 0, 0, 0.4)', description : 'Visa refused.'},
+                'u': { colour : 'rgba(0, 0, 255, 0.2)', description : 'Customs union.'},
+                'f': { colour : 'rgba(0, 255, 0, 0.2)', description : 'Visa not required'},
+                'o': { colour : 'rgba(204, 255, 255, 0.4)', description : 'Visa gained online' },
+                'e': { colour : 'rgba(152, 251,152, 0.5)', description : 'Electronic visa required.'},
+                'self': { colour : 'rgba(0, 0, 255, 0.4)', description : ''}
             },
             mode = 'select',
             options = $.extend({
@@ -135,6 +111,7 @@
                 /*@Geo features to the map@*/
                 Fill: function() {
                     dataDraw.Clear();
+
                     mode = 'select';
                     $.getJSON(options.data.info, function(data) {
                         $.each(data, function(key, val) {
@@ -173,8 +150,10 @@
 
                 /*@Removes all features from map@*/
                 Clear: function() {
+                    dataDraw.Info([-100,-100], 'select');
+                    dataDraw.Info([-100,-100], 'highlight');
                     while (map.getOverlays().getArray().length > 0) {
-                        map.removeOverlay(map.getOverlays().getArray()[0])
+                        map.removeOverlay(map.getOverlays().getArray()[0]);
                     }
                 },
 
@@ -247,7 +226,7 @@
                                     if(mode != 'select'){
                                         dataDraw.Select.addFeature(feature);
                                         options.loader.show();
-                                        var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name + '&callback=?';
+                                        var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name.common + '&callback=?';
                                         var resolver = setInterval(function() {
                                             if (cache.get(url) && cache.get(url) !== '@error@') {
                                                 if (feature == dataDraw.selected) {
@@ -267,7 +246,7 @@
                                                         height:400,
                                                     },400)
                                                     $(options.wiki).append($(blurb).find('p'));
-                                                    $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + feature.get('info').name + '>Wikipedia</a></p>').scrollTop(0);
+                                                    $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + encodeURI(feature.get('info').name.common) + '>Wikipedia</a></p>').scrollTop(0);
                                                 }
                                             }else if(cache.get(url) == '@error@'){
                                                     clearInterval(resolver);
@@ -294,7 +273,7 @@
                 clearInterval(resolver);
                 var data = JSON.parse(cache.get(options.data.info));
                 $.each(data, function(key, val) {
-                    options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name + '</option>')
+                    options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name.official + '</option>')
                     struct[val.cca2] = val
                 })
                 dataDraw.Fill()
