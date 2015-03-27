@@ -22,22 +22,18 @@
                 options.notify.animate({bottom:0},500).delay(3000).animate({bottom:-200},500);
             },
             cache = {
-                get: function(url) {
-                    if (localStorage.getItem(url) == null) {
-
-                        $.ajax({
-                                url: url,
-                                dataType: 'json',
-                                async: false
-                            })
-                            .done(function(data) {
-                                localStorage[url] = JSON.stringify(data);
-                                return localStorage[url];
-                            })
-                            .fail(function() {
-                                return '@error@'
-                            })
-                    } else return localStorage[url];
+                get: function(url, callback) {
+                    if (localStorage.getItem(url) === null) {
+                        $.getJSON(url).done(function(data){
+                            localStorage[url] = JSON.stringify(data);
+                            callback(data);
+                        })
+                        .fail(function() {
+                            return '@error@'
+                        })
+                    } else{
+                        callback(JSON.parse(localStorage[url]));
+                    }
                 }
             },
             map = new ol.Map({
@@ -268,17 +264,14 @@
 
             }
 
-        var resolver = setInterval(function() {
-            if (cache.get(options.data.info)) {
-                clearInterval(resolver);
-                var data = JSON.parse(cache.get(options.data.info));
-                $.each(data, function(key, val) {
-                    options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name.official + '</option>')
-                    struct[val.cca2] = val
-                })
-                dataDraw.Fill()
-            }
-        }, 300);
+        cache.get(options.data.info, function(data){
+            $.each(data, function(key, val) {
+                options.choser.append('<option value=\'' + val.cca2 + '\'>' + val.name.official + '</option>');
+                struct[val.cca2] = val;
+            })
+            dataDraw.Fill();
+        })
+      
 
         // dataDraw.Fill()
         $(document).keyup(function(e) {
