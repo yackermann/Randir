@@ -223,33 +223,26 @@
                                         dataDraw.Select.addFeature(feature);
                                         options.loader.show();
                                         var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + feature.get('info').name.common + '&callback=?';
-                                        var resolver = setInterval(function() {
-                                            if (cache.get(url) && cache.get(url) !== '@error@') {
-                                                if (feature == dataDraw.selected) {
-                                                    clearInterval(resolver)
-                                                    var datap = JSON.parse(cache.get(url))
-                                                    var blurb = $('<div></div>').html(datap.parse.text['*']);
-                                                    blurb.find('a').each(function() {
-                                                        $(this).replaceWith($(this).html());
-                                                    });
-                                                    blurb.find('sup').remove();
-                                                    blurb.find('.mw-ext-cite-error').remove();
-                                                    blurb.find('#coordinates').parent().parent().remove()
-                                                    blurb.find('.nowrap').remove()
+                                        
+                                        cache.get(url, function(data){
+                                            if (feature == dataDraw.selected) {
+                                                var blurb = $('<div></div>').html(data.parse.text['*']);
+                                                blurb.find('a').each(function() {
+                                                    $(this).replaceWith($(this).html());
+                                                });
+                                                blurb.find('sup').remove();
+                                                blurb.find('.mw-ext-cite-error').remove();
+                                                blurb.find('#coordinates').parent().parent().remove()
+                                                blurb.find('.nowrap').remove()
 
-                                                    options.loader.hide();
-                                                    options.wiki.animate({
-                                                        height:400,
-                                                    },400)
-                                                    $(options.wiki).append($(blurb).find('p'));
-                                                    $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + encodeURI(feature.get('info').name.common) + '>Wikipedia</a></p>').scrollTop(0);
-                                                }
-                                            }else if(cache.get(url) == '@error@'){
-                                                    clearInterval(resolver);
-                                                    options.loader.hide();
-                                                    $(options.wiki).append('<p>Error while loading data.</p>');
+                                                options.loader.hide();
+                                                options.wiki.animate({
+                                                    height:400,
+                                                },400)
+                                                $(options.wiki).append($(blurb).find('p'));
+                                                $(options.wiki).append('<p>Source: <a href=https://en.wikipedia.org/wiki/' + encodeURI(feature.get('info').name.common) + '>Wikipedia</a></p>').scrollTop(0);
                                             }
-                                        }, 500);
+                                        })
                                     }else{
                                         dataDraw.Visa(feature.getId());
                                         $("#selecter").select2("val", feature.getId());
